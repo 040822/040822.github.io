@@ -272,16 +272,12 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <p><img   src="https://github.com/040822/picx-images-hosting/raw/master/20240211/Snipaste_2020-02-20_21-51-29.tnux6oy0ukg.webp"  alt="Snipaste_2020-02-20_21-51-29" ><br />
-2020.03.20<br />
-啊哈添柴网址:<a class="link"   target="_blank" rel="noopener" href="https://www.acoj.com/problemset/index" >https://www.acoj.com/problemset/index<i class="fas fa-external-link-alt"></i></a></p>
-<p>本文章主要收录040822在啊哈添柴上的题解。<br />
+                    <p><img   src="https://github.com/040822/picx-images-hosting/raw/master/20240211/Snipaste_2020-02-20_21-51-29.tnux6oy0ukg.webp"  alt="Snipaste_2020-02-20_21-51-29"><br>2020.03.20<br>啊哈添柴网址:<a class="link"   target="_blank" rel="noopener" href="https://www.acoj.com/problemset/index" >https://www.acoj.com/problemset/index<i class="fas fa-external-link-alt"></i></a></p>
+<p>本文章主要收录040822在啊哈添柴上的题解。<br>因为原网站上关于题解的审核迟迟不通过，于是咱们只能在这里写题解了。<br>本文章中所有的题解均通过python3实现。</p>
+<p><p>本文章主要收录040822在啊哈添柴上的题解。<br />
 因为原网站上关于题解的审核迟迟不通过，于是咱们只能在这里写题解了。<br />
-本文章中所有的题解均通过python3实现。</p>
-<p>本文章主要收录040822在啊哈添柴上的题解。<br />
-因为原网站上关于题解的审核迟迟不通过，于是咱们只能在这里写题解了。<br />
-本文章中所有的题解均通过python3实现。</p>
-<h2 class="title-h2">正文</h2>
+本文章中所有的题解均通过python3实现。</p></p>
+<p><h2 class="title-h2">正文</h2></p>
 <div class="xControl">
 <div class="xHeading">
 <div class="xIcon"><i class="fa fa-plus"></i></div>
@@ -311,7 +307,8 @@
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">限制:</strong></p>
 <pre data-v-f7b7da02="">-1,000,000,000 ≤ N ≤ 1,000,000,000 。
-<p>每个测试点1s</pre></p>
+
+每个测试点1s</pre>
 </div>
 <div data-v-f7b7da02="">
 <div data-v-f7b7da02="">
@@ -360,7 +357,8 @@ print(int(a))</pre>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输入格式:</strong></p>
 <pre data-v-f7b7da02="">第一行一个数n，表示牌的张数
-<p>第二行和第三行分别n个数，分别表示桌上和手里的牌的点数</pre></p>
+
+第二行和第三行分别n个数，分别表示桌上和手里的牌的点数</pre>
 </div>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输出格式:</strong></p>
@@ -389,17 +387,19 @@ print(int(a))</pre>
 list1=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-keyword">int</span>,input().split()))#输入部分
 list2=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-keyword">int</span>,input().split()))
 i,j,c=<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>
-<p><span class="hljs-keyword">while</span> i&lt;n:     #判断纸牌是否匹配<br />
-<span class="hljs-keyword">while</span> j&lt;n:<br />
-<span class="hljs-keyword">if</span> list1[i]+list2[j]==<span class="hljs-number">13</span>:<br />
-c=c+<span class="hljs-number">1</span><br />
-list1[i]=<span class="hljs-number">14</span><br />
-list2[j]=<span class="hljs-number">14</span>#偷懒式移除匹配的牌<br />
-j=j+<span class="hljs-number">1</span><br />
-i=i+<span class="hljs-number">1</span><br />
-j=<span class="hljs-number">0</span></p>
-<p><span class="hljs-built_in">print</span>©#输出<br />
-</pre></p>
+
+<span class="hljs-keyword">while</span> i&lt;n:     #判断纸牌是否匹配
+    <span class="hljs-keyword">while</span> j&lt;n:
+        <span class="hljs-keyword">if</span> list1[i]+list2[j]==<span class="hljs-number">13</span>:
+            c=c+<span class="hljs-number">1</span>
+            list1[i]=<span class="hljs-number">14</span>
+            list2[j]=<span class="hljs-number">14</span>#偷懒式移除匹配的牌
+        j=j+<span class="hljs-number">1</span>
+    i=i+<span class="hljs-number">1</span>
+    j=<span class="hljs-number">0</span>
+
+<span class="hljs-built_in">print</span>(c)#输出
+</pre>
 </blockquote>
 <p>人生苦短，我用python</p>
 <p>这里主要用两个list存储输入第二、三 两行的数据，然后再让两个list中的每一个元素相加，判断是否等于13，如果是，则去除这一对数据。</p>
@@ -423,8 +423,10 @@ j=<span class="hljs-number">0</span></p>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输入格式:</strong></p>
 <pre data-v-f7b7da02="">输入有2行
-<p>第1行为1个正整数，表示所生成的随机数的个数：N</p>
-<p>第2行有N个用空格隔开的正整数，为所产生的随机数。</pre></p>
+
+第1行为1个正整数，表示所生成的随机数的个数：N
+
+第2行有N个用空格隔开的正整数，为所产生的随机数。</pre>
 </div>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输出格式:</strong></p>
@@ -459,17 +461,20 @@ j=<span class="hljs-number">0</span></p>
 l=list(map(<span class="hljs-keyword">int</span>,input().split()))
 a=[<span class="hljs-number">0</span>]*<span class="hljs-number">1001</span>
 b=<span class="hljs-function">m
-<p><span class="hljs-keyword">for</span> x in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,m)</span>:<br />
-a[l[x]]+</span>=<span class="hljs-number">1</span></p>
-<p><span class="hljs-function"><span class="hljs-keyword">for</span> x in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,<span class="hljs-number">1001</span>)</span>:<br />
-<span class="hljs-keyword">    if</span> a[x]&gt;1:<br />
-b-</span>=(a[x]-<span class="hljs-number">1</span>)<br />
-a[x]=<span class="hljs-number">1</span><br />
-print(b)<br />
-<span class="hljs-function"><span class="hljs-keyword">for</span> x in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,<span class="hljs-number">1001</span>)</span>:<br />
-<span class="hljs-keyword">    for</span> y in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,a[x])</span>:<br />
-<span class="hljs-title">        print</span><span class="hljs-params">(x,<span class="hljs-string">‘’</span>, end=<span class="hljs-string">“”</span>)</span></p>
-<p></span></pre></p>
+
+<span class="hljs-keyword">for</span> x in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,m)</span>:
+    a[l[x]]+</span>=<span class="hljs-number">1</span>
+
+<span class="hljs-function"><span class="hljs-keyword">for</span> x in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,<span class="hljs-number">1001</span>)</span>:
+<span class="hljs-keyword">    if</span> a[x]&gt;1:
+        b-</span>=(a[x]-<span class="hljs-number">1</span>)
+        a[x]=<span class="hljs-number">1</span>
+print(b)
+<span class="hljs-function"><span class="hljs-keyword">for</span> x in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,<span class="hljs-number">1001</span>)</span>:
+<span class="hljs-keyword">    for</span> y in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">0</span>,a[x])</span>:
+<span class="hljs-title">        print</span><span class="hljs-params">(x,<span class="hljs-string">''</span>, end=<span class="hljs-string">""</span>)</span>
+
+</span></pre>
 </blockquote>
 </div>
 </div>
@@ -507,7 +512,8 @@ print(b)<br />
 </pre>
 <div data-v-f7b7da02="">
 <pre data-v-f7b7da02="">对于20%的数据，区域之间没有重合的部分；
-<p>对于其它的数据，区域之间有重合的情况。</pre></p>
+
+对于其它的数据，区域之间有重合的情况。</pre>
 </div>
 <div data-v-f7b7da02="">
 <div data-v-f7b7da02="">
@@ -559,8 +565,12 @@ c=<span class="hljs-number">0</span>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输入格式:</strong></p>
 <pre data-v-f7b7da02="">共有2 行。 
-<p>第一行 1 个整数，n，表示一元多项式的次数(1 ≤ n ≤ 100)。</p>
-<p>第二行有 n+1 个整数，其中第i 个整数表示第n-i+1 次项的系数，每两个整数之间用空格隔开。</pre></p>
+
+第一行 1 个整数，n，表示一元多项式的次数(1 ≤ n ≤ 100)。
+
+
+
+第二行有 n+1 个整数，其中第i 个整数表示第n-i+1 次项的系数，每两个整数之间用空格隔开。</pre>
 <div data-v-f7b7da02="">
 <pre data-v-f7b7da02="">多项式各次项系数的绝对值均不超过100。</pre>
 </div>
@@ -594,33 +604,35 @@ c=<span class="hljs-number">0</span>
 <blockquote>
 <pre class="ql-syntax" spellcheck="false">n=int(input())<span class="hljs-comment">#多次式次数,n个</span>
 a=list(map(int,input().split()))<span class="hljs-comment">#各位常数,共有n+1个</span>
-<p><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>):<br />
-<span class="hljs-keyword">if</span> a[x]!=<span class="hljs-number">0</span>:<br />
-<span class="hljs-comment">#判断系数是否为0</span><br />
-<span class="hljs-keyword">if</span> x<mark>n:<br />
-<span class="hljs-comment">#判断是否为常数项</span><br />
-<span class="hljs-keyword">if</span> a[x]&gt;<span class="hljs-number">0</span>:<br />
-print(<span class="hljs-string">‘+’</span>,end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-comment">#判断常数项是否为正数，正数前边加+</span><br />
-print(a[x],end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-comment">#打印常数</span><br />
-<span class="hljs-keyword">else</span>:<br />
-<span class="hljs-keyword">if</span> x!=<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> a[x]&gt;<span class="hljs-number">0</span>:<br />
-print(<span class="hljs-string">‘+’</span>,end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-comment">#非首项正常数前面加+</span><br />
-<span class="hljs-keyword">if</span> a[x]!=<span class="hljs-number">1</span>:<br />
-<span class="hljs-comment">#常数abs()=1的只打印符号</span><br />
-<span class="hljs-keyword">if</span> a[x]</mark><span class="hljs-number">-1</span>:<br />
-print(<span class="hljs-string">‘-’</span>,end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-keyword">else</span>:<br />
-print(a[x],end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-keyword">if</span> n-x==<span class="hljs-number">1</span>:<br />
-print(<span class="hljs-string">‘x’</span>,end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-comment">#次数为1时不打印x(^1)</span><br />
-<span class="hljs-keyword">else</span>:<br />
-print(<span class="hljs-string">‘x^’</span>,end=<span class="hljs-string">‘’</span>)<br />
-print(n-x,end=<span class="hljs-string">‘’</span>)<br />
-<span class="hljs-comment">#打印x^n</span></p>
+
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">if</span> a[x]!=<span class="hljs-number">0</span>:
+        <span class="hljs-comment">#判断系数是否为0</span>
+        <span class="hljs-keyword">if</span> x==n:
+            <span class="hljs-comment">#判断是否为常数项</span>
+            <span class="hljs-keyword">if</span> a[x]&gt;<span class="hljs-number">0</span>:
+                print(<span class="hljs-string">'+'</span>,end=<span class="hljs-string">''</span>)
+                <span class="hljs-comment">#判断常数项是否为正数，正数前边加+</span>
+            print(a[x],end=<span class="hljs-string">''</span>)
+            <span class="hljs-comment">#打印常数</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> x!=<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> a[x]&gt;<span class="hljs-number">0</span>:
+                print(<span class="hljs-string">'+'</span>,end=<span class="hljs-string">''</span>)
+                <span class="hljs-comment">#非首项正常数前面加+</span>
+            <span class="hljs-keyword">if</span> a[x]!=<span class="hljs-number">1</span>:
+                <span class="hljs-comment">#常数abs()=1的只打印符号</span>
+                <span class="hljs-keyword">if</span> a[x]==<span class="hljs-number">-1</span>:
+                    print(<span class="hljs-string">'-'</span>,end=<span class="hljs-string">''</span>)
+                <span class="hljs-keyword">else</span>:
+                    print(a[x],end=<span class="hljs-string">''</span>)
+            <span class="hljs-keyword">if</span> n-x==<span class="hljs-number">1</span>:
+                print(<span class="hljs-string">'x'</span>,end=<span class="hljs-string">''</span>)
+            <span class="hljs-comment">#次数为1时不打印x(^1)</span>
+            <span class="hljs-keyword">else</span>:
+                print(<span class="hljs-string">'x^'</span>,end=<span class="hljs-string">''</span>)
+                print(n-x,end=<span class="hljs-string">''</span>)
+            <span class="hljs-comment">#打印x^n</span>
+
 </pre>
 </blockquote>
 <p>大哥们，这鬼玩意是noip普及组啊！普及组咱就跪了啊！</p>
@@ -893,7 +905,8 @@ print(c)</p></blockquote>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输入格式:</strong></p>
 <pre data-v-f7b7da02="">第一行输入 n（0&lt;n&lt;=1000），表示外星飞船数。
-<p>第二行 n 个整数（&lt;=10^9），表示外星飞船的坐标。</pre></p>
+
+第二行 n 个整数（&lt;=10^9），表示外星飞船的坐标。</pre>
 </div>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输出格式:</strong></p>
@@ -1011,19 +1024,24 @@ print(999-x,end=' ')#输出</p></blockquote>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输入格式:</strong></p>
 <pre data-v-f7b7da02="">输入文件paixu.in共n+1行。
-<p>第一行两个数n m。（n表示n个数，m表示排序的方式，m为1时从大到小排序，m为0</p>
-<p>时从小到大排序）</pre></p>
+
+第一行两个数n m。（n表示n个数，m表示排序的方式，m为1时从大到小排序，m为0
+
+时从小到大排序）</pre>
 </div>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输出格式:</strong></p>
 <pre data-v-f7b7da02="">输出文件paixu.out共1行。
-<p>按照要求输出。每个数用一个空格间隔开</pre></p>
+
+按照要求输出。每个数用一个空格间隔开</pre>
 </div>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">限制:</strong></p>
 <pre data-v-f7b7da02="">20%的数据满足：0&lt;=A、B&lt;=16000 n&lt;=10
-<p>40%的数据满足：0&lt;=A、B&lt;=32767 n&lt;=100</p>
-<p>100%的数据满足：0&lt;=A、B&lt;=10^9 n&lt;=1000</pre></p>
+
+40%的数据满足：0&lt;=A、B&lt;=32767 n&lt;=100
+
+100%的数据满足：0&lt;=A、B&lt;=10^9 n&lt;=1000</pre>
 </div>
 <div data-v-f7b7da02="">
 <div data-v-f7b7da02="">
@@ -1081,7 +1099,8 @@ l.remove(c)</p></blockquote>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输入格式:</strong></p>
 <pre data-v-f7b7da02="">第一行一个整数n，表示数列的元素个数。
-<p>接下来n个整数，表示这个数列。</pre></p>
+
+接下来n个整数，表示这个数列。</pre>
 </div>
 <div data-v-f7b7da02="">
 <p data-v-f7b7da02=""><strong data-v-f7b7da02="">输出格式:</strong></p>
