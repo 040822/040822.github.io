@@ -26,7 +26,7 @@ base_info:
   logo: /images/logo.jpg
 
   # Website favicon, You can use local image path or image link
-  favicon: /images/logo.svg
+  favicon: /images/logo.jpg
   # Article image align position, value: left | center
   article_img_align: left
 
@@ -39,10 +39,10 @@ base_info:
 menu:
   Archives: /archives
   # Tags: /tags
-  # Categories: /categories
-  # Links: /links
+  Categories: /categories
+  Links: /links
   # About: /about
-  # Changelog: /changelog
+  Changelog: /changelog
   Photos: /photos
   # ......
 
@@ -84,7 +84,7 @@ social_contact:
     zhihu:           # ZhiHu
     twitter:         # Twitter
     facebook:        # Facebook
-    email:           # Email
+    email: wxflwyr@126.com           # Email
 
 
 # ---------------------------------------------------------------------------------------
@@ -350,3 +350,16 @@ inject:
     # - /js/custom-1.js
     # - /js/custom-2.js
     # - ...
+
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# 网站运行时间，格式形如：“本站已安全运行 101 天 12 小时 13 分 41 秒”
+# Runing Time
+#running_time:
+#  enable: false
+#  create_time: '02/10/2024 20:00:00' #此处修改你的建站时间
+# https://blog.musnow.top/posts/138502038/index.html 
+# 未成功
