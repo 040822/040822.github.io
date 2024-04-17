@@ -37,3 +37,15 @@ head:{text:'T8(a)'}}
 head:{text:'T8(b)'}
 }
 ```
+
+```wavedrom
+{signal: [
+  {name: "EN", wave: "0",period: 0.5},
+  {},
+  {name: "Q", wave: "0h..l..h..l.....",period: 0.5 },
+  {},
+  {},
+],
+head:{text:'T7'}
+}
+```

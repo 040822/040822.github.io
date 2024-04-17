@@ -34,3 +34,6 @@ date: 2024-02-11 17:21:58
 https://blog.homurax.com/2022/08/21/hexo-theme-latex/  
 https://blog.windsky.tech/2021/01/30/Hexo-Katex/  
 https://blog.chaos.run/dreams/hexo-enable-math-support/index.html  
+
+2024.04.17
+惨痛的经验教训告诉我们：1.不要将过大的图片上传至git库里，这样只会使你的git库变得炒鸡大。2.没事别更新包。这次更新keep主题（4.0.11）后我的相册直接炸掉，回退至4.0.6之后才解决问题。3.如果有地方出bug了而你又排查不出来的话，尝试看一下依赖包的版本是否变动吧。
