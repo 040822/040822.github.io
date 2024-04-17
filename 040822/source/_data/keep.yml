@@ -56,6 +56,7 @@ first_screen:
 
   # First screen background image in light mode, You can use local image path or image link
   background_img: /images/gal_1.png
+  #background_img: /images/bg.svg
 
   # First screen background image in dark mode, You can use local image path or image link
   background_img_dark: /images/bg.svg
