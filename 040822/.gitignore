@@ -6,6 +6,3 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
-*.jpg
-*.png
-*.gif

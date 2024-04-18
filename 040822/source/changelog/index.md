@@ -37,3 +37,29 @@ https://blog.chaos.run/dreams/hexo-enable-math-support/index.html
 
 2024.04.17
 惨痛的经验教训告诉我们：1.不要将过大的图片上传至git库里，这样只会使你的git库变得炒鸡大。2.没事别更新包。这次更新keep主题（4.0.11）后我的相册直接炸掉，回退至4.0.6之后才解决问题。3.如果有地方出bug了而你又排查不出来的话，尝试看一下依赖包的版本是否变动吧。
+
+又双叒叕出问题了。文章中用markdown格式引用的相对位置图片不渲染（开了post_asset_folder: true），哭唧唧。  
+尝试了以下手段：
+
+- npm install hexo-asset-image --save 得知这玩意n年前就停止维护了
+- npm install hexo-asset-img --save 看样子是楼上的替代品，但是没有用
+- hexo-renderer-marked中 postAsset=true 也没有用
+- npm install hexo-image-link --save 终于有用了，虽然生成时会报错，比如：
+  
+``` 11
+Markdown Image Path does not exists!
+![alt text](image-43.png)
+Label :alt text
+image-43.png
+```
+
+更致命的是以html格式引用的图片反而会不加载了QAQ  
+
+- npm i hexo-renderer-markdown-it-plus --save 成功解决，但是TOC又不渲染了QAQ
+- [渲染器对比](https://bugwz.com/2019/09/17/hexo-markdown-renderer/#1-1%E3%80%81hexo-renderer-marked)
+
+最终还是没能解决TOC问题，崩溃了。
+
+2024.04.18
+
+解决TOC问题了，在设置里把后边这个要关掉，true和toc有冲突。 “relative_link: false”  

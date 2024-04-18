@@ -40,12 +40,12 @@ base_info:
 menu:
   home: /                       # || fa-solid fa-home
   archives: /archives           # || fa-solid fa-box-archive
-   tags: /tags                 # || fa-solid fa-tags
-   categories: /categories     # || fa-solid fa-layer-group
-   links: /links               # || fa-solid fa-link
-   photos: /photos             # || fa-solid fa-image
+  tags: /tags                 # || fa-solid fa-tags
+  categories: /categories     # || fa-solid fa-layer-group
+  links: /links               # || fa-solid fa-link
+  photos: /photos             # || fa-solid fa-image
   # tools: /tools               # || fa-solid fa-tools
-   about: /about               # || fa-solid fa-user-graduate
+  about: /about               # || fa-solid fa-user-graduate
   # ......
 
 
@@ -181,7 +181,7 @@ toc:
   number: false      # Option values: true | false
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false  # Option values: true | false
+  expand_all: true  # Option values: true | false
 
   # If true, auto open TOC every time when you enter post page
   init_open: true    # Option values: true | false
