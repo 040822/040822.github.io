@@ -1,5 +1,36 @@
 /* your-hexo/source/css/custom.css */
 
+body {
+
+    .page-main-content {
+        position: relative;
+        
+        /*背景图片路径*/
+        background: url("https://github.com/040822/picx-images-hosting/raw/master/bg.54xjrpkyeg.svg");
+        /*背景图片不重复多次显示*/
+        background-repeat: no-repeat;
+        /*窗口放缩时背景图片中心始终在屏幕中心*/
+        background-position: center;
+        /*背景图片固定，不滚动*/
+        background-attachment: fixed;
+        /*图片大小自适应窗口大小*/
+        background-size: cover ;
+    }
+}
+
 :root {
-    --first-screen-font-color-light: #0000001b;
+    .page-main-content {
+        position: relative;
+        
+        /*背景图片路径*/
+        background: url("https://github.com/040822/picx-images-hosting/raw/master/bg.54xjrpkyeg.svg");
+        /*背景图片不重复多次显示*/
+        background-repeat: no-repeat;
+        /*窗口放缩时背景图片中心始终在屏幕中心*/
+        background-position: center;
+        /*背景图片固定，不滚动*/
+        background-attachment: fixed;
+        /*图片大小自适应窗口大小*/
+        background-size: cover ;
+    }
 }
