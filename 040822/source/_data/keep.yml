@@ -38,14 +38,14 @@ base_info:
 # e.g. to enable categories, you need to execute `hexo new page categories`
 # Use `||` to set icon for navigation menu, e.g. `home: / || fa-solid fa-home`
 menu:
-  home: /                       # || fa-solid fa-home
+  #home: /                       # || fa-solid fa-home
   archives: /archives           # || fa-solid fa-box-archive
-  tags: /tags                 # || fa-solid fa-tags
+  #tags: /tags                 # || fa-solid fa-tags
   categories: /categories     # || fa-solid fa-layer-group
   links: /links               # || fa-solid fa-link
   photos: /photos             # || fa-solid fa-image
   # tools: /tools               # || fa-solid fa-tools
-  about: /about               # || fa-solid fa-user-graduate
+  #about: /about               # || fa-solid fa-user-graduate
   # ......
 
 
@@ -197,10 +197,10 @@ website_count:
   # busuanzi
   # See: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi_count:
-    enable: true     # Option values: true | false
-    site_uv: true    # Option values: true | false
-    site_pv: true    # Option values: true | false
-    page_pv: true    # Option values: true | false
+    enable: false     # Option values: true | false
+    site_uv: false    # Option values: true | false
+    site_pv: false    # Option values: true | false
+    page_pv: false    # Option values: true | false
 
 
 # ---------------------------------------------------------------------------------------
@@ -315,7 +315,7 @@ pjax:
 # ---------------------------------------------------------------------------------------
 footer:
   since: 2020           # The starting year of your website, Can be null
-  word_count: false     # Option values: true | false
+  word_count: true     # Option values: true | false
 
   icp:
     enable: false                    # Option values: true | false
@@ -344,11 +344,10 @@ footer:
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/inject.html
 # ---------------------------------------------------------------------------------------
 inject:
-  enable: false  # Option values: true | false
+  enable: true  # Option values: true | false
   css:
-    -
     # e.g.
-    # - /css/custom-1.css
+    - /css/custom-1.css
     # - /css/custom-2.css
     # - ...
   js:

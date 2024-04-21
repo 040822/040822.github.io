@@ -9,3 +9,5 @@ _multiconfig.yml
 *.jpg
 *.png
 *.gif
+python/*
+save/*
