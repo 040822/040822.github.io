@@ -1,0 +1,80 @@
+%文件路径：/data/workspace/myshixun/chapter8_1/class1.txt
+%class1 共有四列，标题是name chinese math music
+
+
+[name, chinese, math, music] = textread('/data/workspace/myshixun/chapter8_1/class1.txt', '%s %f %f %f', 'headerlines', 1);
+[min_math, index] = min(math);
+disp(name{index});
+
+2
+
+ %文件路径：/data/workspace/myshixun/chapter8_2/demo.unknown
+
+fileID = fopen('/data/workspace/myshixun/chapter8_2/demo.unknown', 'r');
+data = fread(fileID, '*char');
+frewind(fileID);
+data_u8 = fread(fileID, '*char');
+frewind(fileID);
+data_u16 = fread(fileID, '*uint16');
+frewind(fileID);
+data_u64 = fread(fileID, '*uint64');
+frewind(fileID);
+data_f64 = fread(fileID, '*float64');
+fclose(fileID);
+
+disp(data);
+disp(data_u8);
+disp(data_u16);
+disp(data_u64);
+disp(data_f64);
+
+3
+ %读取文件路径：/data/workspace/myshixun/chapter8_3/class2.txt
+ %class2 共有四列，标题是name chinese math music
+ %写入文件路径：/data/workspace/myshixun/chapter8_3/stu/class2_total.txt
+
+
+[name, chinese, math, music] = textread('/data/workspace/myshixun/chapter8_3/class2.txt', '%s %f %f %f', 'headerlines', 1);
+totalscore = chinese + math + music;
+fileID = fopen('/data/workspace/myshixun/chapter8_3/stu/class2_total.txt', 'w');
+fprintf(fileID, 'name\tchinese\tmath\tmusic\ttotalscore\n');
+
+for i = 1:length(name)
+    fprintf(fileID, '%s\t%f\t%f\t%f\t%f\n', name{i}, chinese(i), math(i), music(i), totalscore(i));
+end
+
+fclose(fileID);
+
+  %读取文件路径：/data/workspace/myshixun/chapter8_4/class1.txt
+   %读取文件路径：/data/workspace/myshixun/chapter8_4/class2.txt
+   %class1和class2 各有四列，标题是name chinese math music
+ %写入文件路径：/data/workspace/myshixun/chapter8_4/stu/class_1_2.txt
+
+[name1, chinese1, math1, music1] = textread('/data/workspace/myshixun/chapter8_4/class1.txt', '%s %f %f %f', 'headerlines', 1);
+[name2, chinese2, math2, music2] = textread('/data/workspace/myshixun/chapter8_4/class2.txt', '%s %f %f %f', 'headerlines', 1);
+
+name = [name1; name2];%合并
+chinese = [chinese1; chinese2];
+math = [math1; math2];
+music = [music1; music2];
+
+
+totalscore = chinese + math + music;
+[totalscore, index] = sort(totalscore, 'descend');%加一列
+
+name = name(index);
+chinese = chinese(index);
+math = math(index);
+music = music(index);
+
+fileID = fopen('/data/workspace/myshixun/chapter8_4/stu/class_1_2.txt', 'w');
+
+
+fprintf(fileID, 'name\tchinese\tmath\tmusic\ttotalscore\n');
+
+for i = 1:length(name)
+    fprintf(fileID, '%s\t%f\t%f\t%f\t%f\n', name{i}, chinese(i), math(i), music(i), totalscore(i));
+end
+
+
+fclose(fileID);

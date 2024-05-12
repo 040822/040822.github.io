@@ -5,8 +5,8 @@ from PIL import Image
 def make_md():
     # 配置信息
     image_directory = "D:\wx\office\\ahaic\\040822.github.io\\040822\source\images\pixiv"  # 图片所在目录路径
-    base_url = "/images/pixiv/"  # 图片的基础URL
-    output_md_file = "source\_data\photos.yml"  # 输出的Markdown文件名
+    base_url = "D:\wx\office\\ahaic\\040822.github.io\\040822\source\images\pixiv\\"  # 图片的基础URL
+    output_md_file = "D:\wx\office\\ahaic\\040822.github.io\\040822\source\_data\photos.yml"  # 输出的Markdown文件名
 
     # 获取所有图片文件名
     image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.webp')  # 图片扩展名
