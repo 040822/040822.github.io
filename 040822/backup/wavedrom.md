@@ -160,3 +160,18 @@ head:{text:'T8-5'}
 head:{text:'T8-21'}
 }
 ```
+```wavedrom
+{signal: [
+  {name: "Q0", wave: "1....l.....",period: 0.5},
+  {name: "Q1", wave: "0.....h....",period: 0.5},
+  {name: "G0", wave: "1....lh....",period: 0.5},
+  {},
+  {name: "Q0", wave: "1....l.....",period: 0.5},
+  {name: "Q1", wave: "1.....l....",period: 0.5},
+  {name: "G0", wave: "0....hl....",period: 0.5},
+
+  
+],
+head:{text:'数字'}
+}
+```
