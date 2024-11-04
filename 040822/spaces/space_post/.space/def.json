@@ -1,0 +1,1 @@
+{"_filters":[{"type":"all","trueFalse":false,"filters":[{"type":"file","fType":"link","field":"path","fn":"include","value":"_posts"},{"type":"file","fType":"text","field":"extension","fn":"is","value":"md"}]}],"_contexts":[],"_links":[],"_sort":{"field":"rank","asc":false,"group":false,"recursive":false},"_template":"","_templateName":"","_subfolders":""}
