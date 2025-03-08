@@ -282,7 +282,7 @@
 <h4 id="zip伪加密"><a class="markdownIt-Anchor" href="#zip伪加密"></a> ZIP伪加密</h4>
 <p>wiki上有对伪加密的介绍。<br />
 [zip格式伪加密_504b0304-CSDN博客](<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/specter11235/article/details/70306436" >https://blog.csdn.net/specter11235/article/details/70306436<i class="fas fa-external-link-alt"></i></a><br />
-![[Pasted image 20240725222432.png]]<br />
+![](Pasted image 20240725222432.png)<br />
 PS:按照wiki对zip目录结构的介绍，08 00是通用位标记，但实际上它前边两位09 00才是通用位标记，有点坑QAQ。问题可能在于此文件没有那个“解压所需 pkware 的最低版本”占位。</p>
 <h4 id="文件中的秘密"><a class="markdownIt-Anchor" href="#文件中的秘密"></a> 文件中的秘密</h4>
 <p>图片属性</p>
@@ -296,11 +296,11 @@ vscode插件：Hex Editor</p>
 <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_57061511/article/details/117999226" >＜总结＞CTF·图片隐写_图片隐写 ctf-CSDN博客<i class="fas fa-external-link-alt"></i></a><br />
 题目中的“看不见”意思是这样：windows默认图片查看器能打开，但只能看到图片的上端（679x256）部分，有些图片查看器则直接打不开图片（比如kail、vscode）。这题的问题是，图片头数据块记录的宽高与实际宽高不匹配，因此我们需要修改头数据块。<br />
 图片的尺寸679x256，对应的十六进制数如下，修改后边部分即可。<br />
-![[Pasted image 20240725231553.png]]<br />
+![](Pasted image 20240725231553.png)<br />
 实际上，wiki-png页面上有提这类题目，如果修改的是宽而不是高的话那么情况更为复杂，详情请看wiki。</p>
 <h4 id="二维码"><a class="markdownIt-Anchor" href="#二维码"></a> 二维码</h4>
 <p>hex查看器可以发现图片里藏了个txt文件，将图片后缀名改为rar后能用压缩软件打开。<br />
-![[Pasted image 20240725232105.png]]</p>
+![](Pasted image 20240725232105.png)</p>
 <p>但是！问题在于，这个rar文件ARCHPR解析不了！可能情况如下：1.它就不是个rar文件 2.它是高版本rar文件，ARCHPR不支持，需要换一个密码破解器。<br />
 TODO</p>
 <h4 id="小明的保险箱"><a class="markdownIt-Anchor" href="#小明的保险箱"></a> 小明的保险箱</h4>
@@ -534,7 +534,7 @@ rar文件头：52 61 72 21 1A 07 00</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">259.9k</span>
+                    <span class="item-value border-box word">257.4k</span>
                 </span>
             
 

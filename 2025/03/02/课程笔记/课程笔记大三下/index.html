@@ -255,7 +255,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
             </span>
         
         
@@ -283,8 +283,8 @@
 <p>w1+w2 两周还没讲完绪论，悲。绪论目前没什么要重点掌握的知识。</p>
 <h2 id="图像处理"><a class="markdownIt-Anchor" href="#图像处理"></a> 图像处理</h2>
 <h3 id="w1c1-绪论"><a class="markdownIt-Anchor" href="#w1c1-绪论"></a> w1c1 绪论</h3>
-<p>![[IMG-20250302162247392.png]]<br />
-![[IMG-20250302162315753.png]]</p>
+<p><img   src="IMG-20250302162247392.png"  alt="" ><br />
+<img   src="IMG-20250302162315753.png"  alt="" ></p>
 <p>基本概念：<br />
 一幅图像可定义为一个二维函数f（x，y），其中x和y是空间平面坐标， （x，y）处的幅值f（）表示强度。当x，y和灰度值f 是有限的离散数 值时，图像为数字图像。<br />
 数字图像是由有限数量的元素组成，每个元素称像素。</p>
@@ -298,8 +298,8 @@
 <blockquote>
 <p>也就是说不仅是简单的“修图”，分析图像也属于图像处理的研究范畴。</p>
 </blockquote>
-<p>![[IMG-20250302162541540.png]]</p>
-<p>![[IMG-20250302162600229.png]]</p>
+<p><img   src="IMG-20250302162541540.png"  alt="" ></p>
+<p><img   src="IMG-20250302162600229.png"  alt="" ></p>
 <p>三个层次的特征/三个层次的处理：</p>
 <ul>
 <li>低层处理：对图像处理以改善效果（如 图像=》图像）。就是改变图像的颜色什么的基本特征。</li>
@@ -307,29 +307,29 @@
 <li>高层处理（图像理解）：研究图像中各目标的性质和其相互关系， 理解图像的含义（比如图像语义分析）。图像=》语义。</li>
 </ul>
 <p>图像处理的流程：<br />
-![[IMG-20250302162839215.png]]<br />
-![[IMG-20250302162852211.png]]</p>
-<p>![[IMG-20250302162902127.png]]</p>
+<img   src="IMG-20250302162839215.png"  alt="" ><br />
+<img   src="IMG-20250302162852211.png"  alt="" ></p>
+<p><img   src="IMG-20250302162902127.png"  alt="" ></p>
 <h3 id="w1c2数字图像基础"><a class="markdownIt-Anchor" href="#w1c2数字图像基础"></a> w1c2数字图像基础</h3>
-<p>![[IMG-20250302163111112.png]]</p>
+<p><img   src="IMG-20250302163111112.png"  alt="" ></p>
 <h4 id="21"><a class="markdownIt-Anchor" href="#21"></a> 2.1</h4>
-<p>![[IMG-20250302163218326.png]]<br />
+<p><img   src="IMG-20250302163218326.png"  alt="" ><br />
 人眼视觉：立体视觉。</p>
 <ul>
 <li>杆细胞(Rods):暗视觉，7500~15000万，亮度明暗 。分布在两侧，有一个盲区。</li>
 <li>锥细胞(Cones):明视觉，3种感光细胞，600~700万，颜色和细节，红绿蓝三种视锥细胞。集中在中心凹</li>
 </ul>
 <p>亮度适应性：<br />
-![[IMG-20250302163311103.png]]<br />
-![[IMG-20250302163354448.png]]<br />
-![[IMG-20250302163402640.png]]<br />
-![[IMG-20250302163416941.png]]</p>
-<p>![[IMG-20250302163422935.png]]</p>
+<img   src="IMG-20250302163311103.png"  alt="" ><br />
+<img   src="IMG-20250302163354448.png"  alt="" ><br />
+<img   src="IMG-20250302163402640.png"  alt="" ><br />
+<img   src="IMG-20250302163416941.png"  alt="" ></p>
+<p><img   src="IMG-20250302163422935.png"  alt="" ></p>
 <h4 id="22"><a class="markdownIt-Anchor" href="#22"></a> 2.2</h4>
-<p>![[IMG-20250302163640478.png]]<br />
+<p><img   src="IMG-20250302163640478.png"  alt="" ><br />
 没了。</p>
 <h4 id="23"><a class="markdownIt-Anchor" href="#23"></a> 2.3</h4>
-<p>![[IMG-20250302163744749.png]]<br />
+<p><img   src="IMG-20250302163744749.png"  alt="" ><br />
 f为图像的亮度，或者说是图像传感器的接收亮度。<br />
 i为太阳光照到物体上的入射光强；r为物体反射到图像传感器的光强。<br />
 这块讲得很粗糙，不如隔壁光电感知。</p>
@@ -343,7 +343,7 @@ i为太阳光照到物体上的入射光强；r为物体反射到图像传感器
 <li>伪彩色图：用色号+颜色查找表LUT，来表示颜色。一般8bit，用于节省空间。</li>
 <li>空间分辨率：采样间隔值。</li>
 <li>灰度级：(L=2^k -1) ,k为比特深度。也有(L=2^k)作为灰度级的？<br />
-![[IMG-20250302164710162.png]]</li>
+<img   src="IMG-20250302164710162.png"  alt="" ></li>
 </ul>
 <p>插值/超分/缩小：</p>
 <ul>
@@ -354,22 +354,22 @@ i为太阳光照到物体上的入射光强；r为物体反射到图像传感器
 <li>双3次内插方法：插值方程从线性方程换成三次方程。这里讲得更简略了。</li>
 <li>深度学习：略。</li>
 </ul>
-<p>![[IMG-20250302165257897.png]]<br />
-![[IMG-20250302165304726.png]]</p>
+<p><img   src="IMG-20250302165257897.png"  alt="" ><br />
+<img   src="IMG-20250302165304726.png"  alt="" ></p>
 <h2 id="计算机网络"><a class="markdownIt-Anchor" href="#计算机网络"></a> 计算机网络</h2>
-<p>![[IMG-20250302230630823.png]]</p>
+<p><img   src="IMG-20250302230630823.png"  alt="" ></p>
 <h3 id="w1引言"><a class="markdownIt-Anchor" href="#w1引言"></a> w1引言</h3>
 <p>感觉有点太多了，直接看ppt吧（</p>
 <h2 id="雷达原理"><a class="markdownIt-Anchor" href="#雷达原理"></a> 雷达原理</h2>
 <p>带一至今为止最恐怖的课程，成绩为15+25+60，期中期末两次考试占比高达85%。<br />
 <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/677135205" >【万字长文】雷达基础知识（第二部分） - 知乎<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="1-绪论"><a class="markdownIt-Anchor" href="#1-绪论"></a> 1 绪论</h3>
-<p>![[Pasted image 20250305233215.png]]</p>
+<p>![](Pasted image 20250305233215.png)</p>
 <p>雷达Radar 全称： Radio Detection and Ranging，无线电探测和测距。<br />
 IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
 <p>系统：<br />
 脉冲雷达：<br />
-![[IMG-20250305233619765.png]]</p>
+<img   src="IMG-20250305233619765.png"  alt="" ></p>
 <p>测距：发送到接收回波之间的时间 x 光速 / 2。 脉冲越窄性能越好。<br />
 测角： 利用天线方向性。<br />
 天线上下转动，回波信号最强时的波束角度即为仰角；左右测方位角；这俩都是扇形波束。<br />
@@ -377,9 +377,9 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
 测相对速度：<br />
 径向：多普勒频移。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>d</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mi>v</mi><mi>r</mi></msub></mrow><mi>λ</mi></mfrac></mrow><annotation encoding="application/x-tex">f_d = \frac{2v_r}{\lambda}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2062079999999997em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8612079999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">λ</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4101em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285719em;"><span style="top:-2.357em;margin-left:-0.03588em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 测得频移<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">f_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 即可获得相对径向速度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">v_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
 <h3 id="2-发射机"><a class="markdownIt-Anchor" href="#2-发射机"></a> 2 发射机</h3>
-<p>![[IMG-20250305234604870.png]]</p>
+<p><img   src="IMG-20250305234604870.png"  alt="" ></p>
 <p>雷达频段划分：<br />
-![[IMG-20250305234645639.png]]<br />
+<img   src="IMG-20250305234645639.png"  alt="" ><br />
 记右边这四个波段！</p>
 <p>雷达分类略。</p>
 
@@ -499,7 +499,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">259.9k</span>
+                    <span class="item-value border-box word">257.4k</span>
                 </span>
             
 
