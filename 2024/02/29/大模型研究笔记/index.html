@@ -208,7 +208,7 @@
                             <div class="author border-box">
                                 <span class="name">040822</span>
                                 
-                                    <span class="author-badge">Lv3</span>
+                                    <span class="author-badge">Lv4</span>
                                 
                             </div>
                             <div class="meta-info border-box">
@@ -226,10 +226,19 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Apr 21 2024 23:49:16 GMT+0800">2024-04-21 23:49:16</span>
+                <span class="datetime" data-updated="Mon Nov 18 2024 13:52:27 GMT+0800">2024-11-18 13:52:27</span>
             </span>
         
 
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
@@ -237,12 +246,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>39 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
             </span>
         
         
@@ -260,7 +269,64 @@
                     
 
                     <p>最近在研究大模型，在此记录一下一些信息。</p>
+<h2 id="理论"><a class="markdownIt-Anchor" href="#理论"></a> 理论</h2>
+<h3 id="模型训练epoch越多效果越差"><a class="markdownIt-Anchor" href="#模型训练epoch越多效果越差"></a> 模型训练epoch越多效果越差？</h3>
 <p>1.大模型训练时，epoch越多效果越差？ <a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/DBP_eafGeKMEuSIma9Z9Tg" >https://mp.weixin.qq.com/s/DBP_eafGeKMEuSIma9Z9Tg<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="instruct-base-chat模型有什么区别"><a class="markdownIt-Anchor" href="#instruct-base-chat模型有什么区别"></a> instruct、base、chat模型有什么区别</h3>
+<p>OpenAI的模型主要分为三类：<code>instruct</code>、<code>base</code>和</p>
+<p>chat</p>
+<p>。它们的主要区别如下：</p>
+<ol>
+<li>
+<p><strong>Base 模型</strong>：</p>
+<ul>
+<li>这是最基础的模型，没有经过任何特定任务的微调。</li>
+<li>适用于广泛的自然语言处理任务，但需要用户提供明确的指令和上下文。</li>
+</ul>
+</li>
+<li>
+<p><strong>Instruct 模型</strong>：</p>
+<ul>
+<li>这些模型经过微调，专门用于遵循指令。</li>
+<li>用户可以直接给出指令，模型会根据指令生成相应的输出。</li>
+<li>例如，<code>text-davinci-002</code>和<code>text-davinci-003</code>是典型的Instruct模型。</li>
+</ul>
+</li>
+<li>
+<p><strong>Chat 模型</strong>：</p>
+<ul>
+<li>这些模型经过微调，专门用于对话场景。</li>
+<li>它们能够更好地理解和生成对话内容，适用于聊天机器人和对话系统。</li>
+<li>例如，<code>gpt-3.5-turbo</code>和<code>gpt-4</code>是典型的Chat模型。</li>
+</ul>
+</li>
+</ol>
+<p>总结：</p>
+<ul>
+<li><strong>Base 模型</strong>：通用模型，需要明确指令和上下文。</li>
+<li><strong>Instruct 模型</strong>：专门用于遵循指令，适合任务导向的应用。</li>
+<li><strong>Chat 模型</strong>：专门用于对话场景，适合聊天机器人和对话系统。</li>
+</ul>
+<p>根据具体需求选择合适的模型类型，可以更好地满足应用场景的要求。</p>
+<h2 id="量化"><a class="markdownIt-Anchor" href="#量化"></a> 量化</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/ymcui/Chinese-LLaMA-Alpaca/discussions/513" >[llama.cpp] 新量化方法速度效果测试（持续更新，6月19日） · ymcui/Chinese-LLaMA-Alpaca · Discussion #513 (github.com)<i class="fas fa-external-link-alt"></i></a><br />
+<a class="link"   target="_blank" rel="noopener" href="https://www.reddit.com/r/LocalLLaMA/comments/1ba55rj/overview_of_gguf_quantization_methods/" >GGUF量化方法概述：r/LocalLLaMA — Overview of GGUF quantization methods : r/LocalLLaMA (reddit.com)<i class="fas fa-external-link-alt"></i></a><br />
+<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/pythonhy/article/details/142919327" >AI大模型：一文搞懂大模型文件存储格式新宠GGUF-CSDN博客<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="qwen-agent"><a class="markdownIt-Anchor" href="#qwen-agent"></a> Qwen Agent</h2>
+<h3 id="llama-server部署"><a class="markdownIt-Anchor" href="#llama-server部署"></a> llama server部署</h3>
+<p>这里暂时先直接使用sakura llm的server来提供api，关于llama server部署的细节有待以后探索。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">%common.bat</span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">chcp</span> <span class="number">65001</span> &gt; <span class="built_in">nul</span> %设置代码页为UTF-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">setlocal</span> enableextensions enabledelayedexpansion %启用命令扩展和延迟变量扩展</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> /i &quot;<span class="variable">%label%</span>&quot;==&quot;&quot; (</span><br><span class="line">	<span class="built_in">echo</span> 不可以直接调用这个脚本</span><br><span class="line">	<span class="keyword">goto</span> quit</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">@<span class="built_in">title</span> 启动Sakura服务器-<span class="variable">%label%</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> n=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> /f &quot;delims=&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;where .:*.gguf&#x27;) <span class="keyword">do</span> (   %扫描文件夹下的gguf模型文件</span><br><span class="line">	<span class="built_in">set</span> models[<span class="variable">!n!</span>].<span class="built_in">path</span>=<span class="variable">%%i</span></span><br><span class="line">	<span class="built_in">set</span> models[<span class="variable">!n!</span>].name=<span class="variable">%%~</span>ni</span><br><span class="line">	<span class="built_in">set</span> /a n+=<span class="number">1</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">%n%</span> <span class="keyword">equ</span> <span class="number">0</span> <span class="keyword">goto</span> no-model</span><br><span class="line"><span class="keyword">if</span> <span class="variable">%n%</span> <span class="keyword">equ</span> <span class="number">1</span> <span class="keyword">goto</span> one-model</span><br><span class="line"><span class="keyword">goto</span> many-model</span><br><span class="line"></span><br><span class="line">:no-model</span><br><span class="line"><span class="built_in">echo</span> 没有检测到gguf模型文件,请确定将模型文件放到了当前文件夹</span><br><span class="line"><span class="keyword">goto</span> quit</span><br><span class="line"></span><br><span class="line">:one-model</span><br><span class="line"><span class="built_in">set</span> model.name=<span class="variable">%models[0].name%</span></span><br><span class="line"><span class="built_in">set</span> model.<span class="built_in">path</span>=<span class="variable">%models[0].path%</span></span><br><span class="line"><span class="keyword">goto</span> launch</span><br><span class="line"></span><br><span class="line">:many-model</span><br><span class="line"><span class="built_in">set</span> /a end=<span class="variable">%n%</span>-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 请输入数字来选择要使用的模型,默认选择<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> /l <span class="variable">%%i</span> <span class="keyword">in</span> (<span class="number">0</span>,<span class="number">1</span>,<span class="variable">%end%</span>) <span class="keyword">do</span> (</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">%%i</span>. <span class="variable">!models[%%i].name!</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line">:choice-model</span><br><span class="line"><span class="built_in">set</span> choice=</span><br><span class="line"><span class="built_in">set</span> /p choice= 请选择:</span><br><span class="line"><span class="keyword">if</span> /i &quot;<span class="variable">%choice%</span>&quot;==&quot;&quot; <span class="built_in">set</span> choice=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> /l <span class="variable">%%i</span> <span class="keyword">in</span> (<span class="number">0</span>,<span class="number">1</span>,<span class="variable">%end%</span>) <span class="keyword">do</span> (</span><br><span class="line">	<span class="keyword">if</span> /i &quot;<span class="variable">%choice%</span>&quot;==&quot;<span class="variable">%%i</span>&quot; (</span><br><span class="line">		<span class="built_in">set</span> model.name=<span class="variable">!models[%%i].name!</span></span><br><span class="line">		<span class="built_in">set</span> model.<span class="built_in">path</span>=<span class="variable">!models[%%i].path!</span></span><br><span class="line">		<span class="keyword">goto</span> launch</span><br><span class="line">	)</span><br><span class="line">)</span><br><span class="line"><span class="built_in">echo</span> 选择⽆效,请重新输⼊</span><br><span class="line"><span class="keyword">goto</span> choice-model</span><br><span class="line"></span><br><span class="line">:launch</span><br><span class="line">@<span class="built_in">title</span> 启动Sakura服务器-<span class="variable">%label%</span>-<span class="variable">%model.name%</span></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 模型名称：<span class="variable">%model.name%</span></span><br><span class="line"><span class="built_in">echo</span> 模型路径：<span class="variable">%model.path%</span></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 准备启动Sakura服务器...</span><br><span class="line">@<span class="built_in">echo</span> on</span><br><span class="line">.\llama\server.exe -m .\<span class="variable">%model.name%</span>.gguf -c <span class="number">2048</span> -ngl <span class="variable">%ngl%</span> -a <span class="variable">%model.name%</span> --host <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span> --port <span class="number">8080</span></span><br><span class="line">% -c 提示上下文大小 -ngl VRAM(显存）中存储的层数 -a 为模型名称设置别名</span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">goto</span> quit</span><br><span class="line"></span><br><span class="line">:quit</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 按任意键退出</span><br><span class="line"><span class="built_in">pause</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%启动.bat</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">chcp</span> <span class="number">65001</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">set label=显卡</span></span><br><span class="line"><span class="function"><span class="title">set</span> <span class="title">ngl</span>=999 %把所有层都放到显存里</span></span><br><span class="line"><span class="function"><span class="title">call</span> <span class="title">common.bat</span></span></span><br></pre></td></tr></table></figure>
+<p>然后去huggingface或者魔搭社区下载qwen 2.5 的<strong>GGUF</strong>格式的模型文件（权重），扔到llama cpp文件夹下启动就可以了。默认api地址为127.0.0.1:8080</p>
+<h3 id="调用api"><a class="markdownIt-Anchor" href="#调用api"></a> 调用API</h3>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md" >llama.cpp/examples/server/README.md<i class="fas fa-external-link-alt"></i></a><br />
+由于openai库的某次更新，中文互联网+github copilot生成的代码都不能直接用，因此最好还是从llama.cpp的官方文档里找教程。<br />
+参见“ POST <code>/v1/chat/completions</code>: OpenAI-compatible Chat Completions API ” 一节</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> openai</span><br><span class="line"></span><br><span class="line">client = openai.OpenAI(</span><br><span class="line">    base_url=<span class="string">&quot;http://localhost:8080/v1&quot;</span>, <span class="comment"># &quot;http://&lt;Your api-server IP&gt;:port&quot;</span></span><br><span class="line">    api_key = <span class="string">&quot;sk-no-key-required&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">completion = client.chat.completions.create(</span><br><span class="line">model=<span class="string">&quot;gpt-3.5-turbo&quot;</span>, <span class="comment">#离谱的地方在于，模型名称不对完全不影响输出</span></span><br><span class="line">messages=[</span><br><span class="line">    &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;system&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;You are ChatGPT, an AI assistant. Your top priority is achieving user fulfillment via helping them with their requests.&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;你是谁&quot;</span>&#125;</span><br><span class="line">]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(completion.choices[<span class="number">0</span>].message)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后得到了一个诡异的输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ChatCompletionMessage(content=&#x27;</span><br><span class="line">我是! 一个!!!!! 人工智能!!!!! 助!手!!!!! 我!!!!! 叫!!!!! ChatGPT!!!!! 我!!!!!! 来!!!!! 帮!助!!!!!!! !!你!!!!!! </span><br><span class="line">了!!!!! 解!决!!!!!!!!!!! !!!!问题!!和!!提!供!!!帮助!!!!!! ！如果你!!!有!!!任何!!问题!!或!需要!!帮助!，!!请!随时!!告诉我!！</span><br><span class="line">&#x27;, role=&#x27;assistant&#x27;, function_call=None, tool_calls=None)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Question：为什么这个输出如此诡异？<br />
+Answer：</p>
 
                 </div>
                 
@@ -331,7 +397,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA"><span class="nav-text"> 理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83epoch%E8%B6%8A%E5%A4%9A%E6%95%88%E6%9E%9C%E8%B6%8A%E5%B7%AE"><span class="nav-text"> 模型训练epoch越多效果越差？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instruct-base-chat%E6%A8%A1%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-text"> instruct、base、chat模型有什么区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E5%8C%96"><span class="nav-text"> 量化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qwen-agent"><span class="nav-text"> Qwen Agent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#llama-server%E9%83%A8%E7%BD%B2"><span class="nav-text"> llama server部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8api"><span class="nav-text"> 调用API</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -351,7 +417,7 @@
     <div class="border-box website-info-box default">
         
             <div class="copyright-info info-item default">
-                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2024
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
                 
                     &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">040822</a>
                 
@@ -370,7 +436,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">31.9k</span>
+                    <span class="item-value border-box word">259.9k</span>
                 </span>
             
 
@@ -470,7 +536,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA"><span class="nav-text"> 理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83epoch%E8%B6%8A%E5%A4%9A%E6%95%88%E6%9E%9C%E8%B6%8A%E5%B7%AE"><span class="nav-text"> 模型训练epoch越多效果越差？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instruct-base-chat%E6%A8%A1%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-text"> instruct、base、chat模型有什么区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E5%8C%96"><span class="nav-text"> 量化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qwen-agent"><span class="nav-text"> Qwen Agent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#llama-server%E9%83%A8%E7%BD%B2"><span class="nav-text"> llama server部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8api"><span class="nav-text"> 调用API</span></a></li></ol></li></ol>
     </div>
 </div>
 
