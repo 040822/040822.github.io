@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="040822">
+    
+    <title>
+        
+            Linux折腾笔记 |
+        
+        040822&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/custom-1.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"040822.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"040822's Blog","author":"040822","avatar":"/images/logo.jpg","logo":"/images/logo.jpg","favicon":"/images/logo.jpg","article_img_align":"left"},"menu":{"archives":"/archives","categories":"/categories","links":"/links","photos":"/photos"},"first_screen":{"enable":true,"background_img":"/images/gal_1.png","background_img_dark":"/images/bg.svg","description":"我是040822，一个喜欢折腾的人，这是我的个人博客，欢迎来到我的世界！","hitokoto":true},"social_contact":{"enable":true,"links":{"github":"https://github.com/040822","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"wxflwyr@126.com"}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":["/css/custom-1.css"],"js":[null]},"root":"","mathjax":{"enable":true,"per_page":false,"cdn":"//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"},"source_data":{"links":[{"title":"好基友们"},{"name":"y1-fan's Blog","link":"https://y1-fan.github.io/","description":null,"avatar":"/images/78839187.jpg"},{"name":"Keep主题使用手册","link":"https://keep-docs.xpoet.cn/","description":null,"avatar":"/images/logo.svg"}],"photos":[{"url":"D:\\wx\\office\\ahaic\\040822.github.io\\040822\\source\\images\\pixiv\\100905849_p0.png","name":"100905849_p0.png"},{"url":"D:\\wx\\office\\ahaic\\040822.github.io\\040822\\source\\images\\pixiv\\101160816_p0.jpg","name":"101160816_p0.jpg"}]},"version":"4.1.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               040822&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                
+                                归档
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                
+                                分类
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                
+                                友链
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/photos"
+                            >
+                                
+                                相册
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >分类</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links"
+                    >友链</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/photos"
+                    >相册</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Linux折腾笔记
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/logo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">040822</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-04-12 12:49:08</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon Nov 04 2024 20:45:13 GMT+0800">2024-11-04 20:45:13</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.7k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>17 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <h2 id="学习资源"><a class="markdownIt-Anchor" href="#学习资源"></a> 学习资源</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md" >命令行的艺术<i class="fas fa-external-link-alt"></i></a><br />
+<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-tutorial.html" >菜鸟教程<i class="fas fa-external-link-alt"></i></a><br />
+<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/tzhuwb/p/12904754.html" >VMware 虚拟机中 Linux 系统磁盘空间扩容<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="命令行的艺术"><a class="markdownIt-Anchor" href="#命令行的艺术"></a> 命令行的艺术</h2>
+<h3 id="man-bash"><a class="markdownIt-Anchor" href="#man-bash"></a> man bash</h3>
+<p>原文长达4800多行，且全部都是英文，太可怕了。找到了个<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/huiandong/articles/9340091.html" >中文翻译<i class="fas fa-external-link-alt"></i></a>)。<br />
+下边是按照命令行的艺术这个帖子的顺序让copilot生成的一份命令指南，随用随查。在实践中，通常有以下几种情况：1.学到了很多没用的知识 2.有某种需求，却不知道用什么知识去实现它 3.连需求本身都不能确定（比如刚入门linux的时候，对命令行能干什么完全没有概念，自然会出现“连问gpt什么问题都不知道”的情况）。下边的这份命令指南能很好的解决1、3问题：对于1，copilot所生成的回答通常都是一些常用的命令，很少会出现完全用不到的情况；对于3，只需快速浏览一下下边的命令指南便可建立对linux命令行最基本的概念。</p>
+<h3 id="管道"><a class="markdownIt-Anchor" href="#管道"></a> 管道</h3>
+<p>在Unix和Linux系统中，管道（pipe）是一种重要的命令行特性，它允许你将多个命令链接在一起，这样一个命令的输出就可以作为下一个命令的输入。</p>
+<p>管道操作符是<code>|</code>。例如，你可以使用<code>ls</code>命令列出一个目录的内容，然后使用管道将这个列表传递给<code>grep</code>命令，以搜索包含特定文本的文件名。以下是一个例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> | grep <span class="string">&quot;.txt&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<code>ls</code>命令的输出（即目录的内容）被传递给了<code>grep</code>命令。<code>grep</code>命令搜索包含&quot;.txt&quot;的行，也就是以&quot;.txt&quot;结尾的文件名。</p>
+<p>你可以链接任意数量的命令。例如，你可以再添加一个<code>wc -l</code>命令来计算.txt文件的数量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> | grep <span class="string">&quot;.txt&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<code>wc -l</code>命令接收<code>grep</code>命令的输出，并计算输入的行数，也就是.txt文件的数量。</p>
+<h3 id="通配符"><a class="markdownIt-Anchor" href="#通配符"></a> 通配符</h3>
+<p>在Bash中，通配符（wildcards）是一种特殊的字符或者字符序列，它可以匹配一个或者多个文件名或者目录名。以下是一些常见的Bash通配符：</p>
+<ol>
+<li>
+<p><code>*</code>：匹配任意数量的任意字符。例如，<code>*.txt</code>会匹配所有以<code>.txt</code>结尾的文件。</p>
+</li>
+<li>
+<p><code>?</code>：匹配任意单个字符。例如，<code>?.txt</code>会匹配所有只有一个字符并且以<code>.txt</code>结尾的文件，如<code>a.txt</code>，<code>1.txt</code>等。</p>
+</li>
+<li>
+<p><code>[]</code>：匹配方括号中的任意单个字符。例如，<code>[abc].txt</code>会匹配<code>a.txt</code>，<code>b.txt</code>和<code>c.txt</code>。</p>
+</li>
+<li>
+<p><code>[!]</code>或<code>[^]</code>：匹配方括号中没有列出的任意单个字符。例如，<code>[^abc].txt</code>会匹配不以<code>a</code>，<code>b</code>或<code>c</code>开头的任何<code>.txt</code>文件。</p>
+</li>
+<li>
+<p><code>&#123;&#125;</code>：匹配大括号中的任意字符串。例如，<code>&#123;a,b,c&#125;.txt</code>会匹配<code>a.txt</code>，<code>b.txt</code>和<code>c.txt</code>。</p>
+</li>
+<li>
+<p><code>?()</code>，<code>*()</code>，<code>+()</code>，<code>@()</code>，<code>!()</code>：这些是扩展的通配符，用于匹配特定的模式。例如，<code>*(.txt)</code>会匹配所有以<code>.txt</code>结尾的文件。</p>
+</li>
+</ol>
+<p>请注意，要使用扩展的通配符，你需要先通过<code>shopt -s extglob</code>命令启用扩展的通配符功能。</p>
+<p>PS：题外话，github copilot真的是学习cs的好助手啊。像这些知识性的笔记可以全交给copilot来生成，随用随插即可。同时copilot生成的内容可以直接转化成markdown，真的很方便记笔记。</p>
+<h3 id="引用"><a class="markdownIt-Anchor" href="#引用"></a> 引用</h3>
+<p>在Bash中，引用（quoting）是一种防止特殊字符被Shell解释的机制。Bash中有三种类型的引用：单引号（'），双引号（&quot;）和反斜杠（\）。</p>
+<ol>
+<li>单引号（'）：在单引号中的任何字符都会被原样保留，没有任何特殊含义。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;$USER&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>这将会输出<code>$USER</code>，而不是<code>$USER</code>变量的值。</p>
+<ol start="2">
+<li>双引号（&quot;）：在双引号中，某些特殊字符（如<code>$</code>, <code>`</code>, <code>\</code>）仍然保持其特殊含义。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$USER</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这将会输出<code>$USER</code>变量的值，而不是<code>$USER</code>。</p>
+<ol start="3">
+<li>反斜杠（\）：反斜杠用于转义后面的特殊字符，使其失去特殊含义。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> \<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+<p>这将会输出<code>$USER</code>，而不是<code>$USER</code>变量的值。</p>
+<p>引用在Bash脚本编写中非常重要，特别是当你需要处理包含空格或者特殊字符的字符串时。</p>
+<h3 id="任务管理工具"><a class="markdownIt-Anchor" href="#任务管理工具"></a> 任务管理工具</h3>
+<p>在Bash中，你可以使用一些内置的命令来管理你的任务。以下是一些常见的任务管理命令：</p>
+<ol>
+<li><code>&amp;</code>：在命令后面添加<code>&amp;</code>可以让命令在后台运行。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &amp;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>jobs</code>：这个命令可以列出你当前的后台任务。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">jobs</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>fg</code>：这个命令可以将一个后台任务带到前台来。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fg</span> %1</span><br></pre></td></tr></table></figure>
+<p>这个命令会将任务号为1的后台任务带到前台。</p>
+<ol start="4">
+<li><code>bg</code>：这个命令可以将一个暂停的任务在后台继续运行。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bg</span> %1</span><br></pre></td></tr></table></figure>
+<p>这个命令会将任务号为1的暂停任务在后台继续运行。</p>
+<ol start="5">
+<li>
+<p><code>ctrl+z</code>：这个键盘快捷键可以暂停当前正在前台运行的任务。</p>
+</li>
+<li>
+<p><code>ctrl+c</code>：这个键盘快捷键可以终止当前正在前台运行的任务。</p>
+</li>
+<li>
+<p><code>kill</code>：这个命令可以用来终止任务。例如：</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> %1</span><br></pre></td></tr></table></figure>
+<p>这个命令会终止任务号为1的任务。</p>
+<p>以上就是Bash中的一些常见的任务管理命令。</p>
+<h3 id="文件管理工具"><a class="markdownIt-Anchor" href="#文件管理工具"></a> 文件管理工具</h3>
+<p>在Bash中，有许多内置的命令可以用来进行文件和目录管理。以下是一些常见的文件管理命令：</p>
+<ol>
+<li><code>ls</code>：列出目录的内容。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>cd</code>：改变当前目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/directory</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>pwd</code>：打印当前工作目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><code>cp</code>：复制文件或目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> source.txt destination.txt</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><code>mv</code>：移动或重命名文件或目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> old.txt new.txt</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li><code>rm</code>：删除文件或目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> file.txt</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li><code>mkdir</code>：创建新的目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> new_directory</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li><code>rmdir</code>：删除空目录。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rmdir</span> directory</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li><code>touch</code>：创建新的空文件，或者更新现有文件的访问和修改时间。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> file.txt</span><br></pre></td></tr></table></figure>
+<ol start="10">
+<li><code>cat</code>：查看文件内容。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> file.txt</span><br></pre></td></tr></table></figure>
+<ol start="11">
+<li><code>less</code> 和 <code>more</code>：分页查看文件内容。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">less file.txt</span><br><span class="line">more file.txt</span><br></pre></td></tr></table></figure>
+<ol start="12">
+<li><code>find</code>：在目录中查找文件。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">&quot;*.txt&quot;</span></span><br></pre></td></tr></table></figure>
+<p>以上就是Bash中的一些常见的文件管理命令。</p>
+<h4 id="ls-l-中每一列代表的意义"><a class="markdownIt-Anchor" href="#ls-l-中每一列代表的意义"></a> <code>ls -l</code> 中每一列代表的意义</h4>
+<p><code>ls -l</code>命令会以长格式列出目录内容，每一行的输出包含以下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root 4096 Jan 21 07:28 example.txt</span><br></pre></td></tr></table></figure>
+<p>每一列的含义如下：</p>
+<ol>
+<li>
+<p><code>-rwxr-xr-x</code>：这是文件的权限。第一个字符表示文件类型（<code>-</code>表示普通文件，<code>d</code>表示目录，<code>l</code>表示符号链接等）。接下来的九个字符分为三组，每组三个字符，分别表示文件所有者、文件所属组和其他用户的权限。在每组中，<code>r</code>表示读权限，<code>w</code>表示写权限，<code>x</code>表示执行权限。</p>
+</li>
+<li>
+<p><code>1</code>：这是文件的硬链接数量。对于目录，这个数字表示它包含的子项数量（包括<code>.</code>和<code>..</code>）。</p>
+</li>
+<li>
+<p><code>root</code>：这是文件的[[#文件或目录的所有者和所属组是什么]]。</p>
+</li>
+<li>
+<p><code>root</code>：这是文件的所属组。</p>
+</li>
+<li>
+<p><code>4096</code>：这是文件的大小，单位是字节。</p>
+</li>
+<li>
+<p><code>Jan 21 07:28</code>：这是文件的最后修改时间。</p>
+</li>
+<li>
+<p><code>example.txt</code>：这是文件名。</p>
+</li>
+</ol>
+<p>以上就是<code>ls -l</code>命令输出的每一列的含义。</p>
+<h4 id="一个长问题"><a class="markdownIt-Anchor" href="#一个长问题"></a> 一个长问题</h4>
+<p><code>less</code>，<code>head</code>，<code>tail</code> 和 <code>tail -f</code> （甚至 <code>less +F</code>），<code>ln</code> 和 <code>ln -s</code> （了解硬链接与软链接的区别），<code>chown</code>，<code>chmod</code>，<code>du</code> （硬盘使用情况概述：<code>du -hs *</code>）。 关于文件系统的管理，学习 <code>df</code>，<code>mount</code>，<code>fdisk</code>，<code>mkfs</code>，<code>lsblk</code>。知道 inode 是什么（与 <code>ls -i</code> 和 <code>df -i</code> 等命令相关）。<br />
+这些都是Linux命令行中常用的命令，下面是它们的简单解释：</p>
+<ol>
+<li>
+<p><code>less</code>：用于分页查看文件内容，可以向前和向后浏览。</p>
+</li>
+<li>
+<p><code>head</code>：显示文件的前N行。</p>
+</li>
+<li>
+<p><code>tail</code>：显示文件的最后N行。</p>
+</li>
+<li>
+<p><code>tail -f</code>：实时查看文件的末尾，常用于查看日志文件。</p>
+</li>
+<li>
+<p><code>less +F</code>：这与<code>tail -f</code>类似，也是实时查看文件的末尾。</p>
+</li>
+<li>
+<p><code>ln</code>：创建硬链接。</p>
+</li>
+<li>
+<p><code>ln -s</code>：创建软链接（也称为符号链接）。</p>
+</li>
+</ol>
+<p>硬链接和软链接的区别：硬链接是一个指向文件数据的指针，而软链接（符号链接）是一个指向另一个文件路径的指针。</p>
+<ol start="8">
+<li>
+<p><code>chown</code>：改变文件的所有者和所属组。</p>
+</li>
+<li>
+<p><code>chmod</code>：改变文件的权限。</p>
+</li>
+<li>
+<p><code>du</code>：显示目录或文件的磁盘使用情况。</p>
+</li>
+<li>
+<p><code>du -hs *</code>：显示当前目录下每个文件和目录的大小。</p>
+</li>
+<li>
+<p><code>df</code>：显示文件系统的磁盘使用情况。</p>
+</li>
+<li>
+<p><code>mount</code>：挂载文件系统。</p>
+</li>
+<li>
+<p><code>fdisk</code>：磁盘分区工具。</p>
+</li>
+<li>
+<p><code>mkfs</code>：创建文件系统。</p>
+</li>
+<li>
+<p><code>lsblk</code>：列出所有可用的块设备。</p>
+</li>
+<li>
+<p><code>inode</code>：在Unix和类Unix系统中，inode是文件系统的一种数据结构，用于存储文件或目录的元数据（不包括名称和文件数据）。每个文件或目录都有一个与之关联的inode，包含了文件的大小、权限、所有者、创建时间、访问时间等信息。</p>
+</li>
+</ol>
+<h3 id="网络管理工具"><a class="markdownIt-Anchor" href="#网络管理工具"></a> 网络管理工具</h3>
+<p>在Bash中，有许多命令可以用来进行网络管理和诊断。以下是一些常见的网络管理命令：</p>
+<ol>
+<li><code>ping</code>：用于检查网络连接的可用性。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.google.com</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>netstat</code>：显示网络连接，路由表，接口统计等。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -a</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>ifconfig</code>：用于显示或配置网络接口。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><code>ssh</code>：用于远程登录到其他计算机。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@hostname</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><code>scp</code>：用于在本地和远程计算机之间复制文件。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp source.txt username@hostname:/path/to/destination</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li><code>wget</code>：用于从网络下载文件。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://example.com/file.txt</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li><code>curl</code>：用于发送或接收数据。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://example.com</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li><code>nslookup</code>：查询DNS查找主机名或IP地址。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup www.google.com</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li><code>traceroute</code>：显示数据包到达目标主机所经过的路径。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">traceroute www.google.com</span><br></pre></td></tr></table></figure>
+<ol start="10">
+<li><code>nmap</code>：网络探测和安全审核。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -v -A target_host</span><br></pre></td></tr></table></figure>
+<p>以上就是Bash中的一些常见的网络管理命令。</p>
+<h2 id="从零学习linux"><a class="markdownIt-Anchor" href="#从零学习linux"></a> 从零学习linux！</h2>
+<p>做一个小实验，看看如何从零使用github copilot学习linux。<br />
+本章格式为：小标题表示输入copilot的问题，内容为它的回答</p>
+<h3 id="如何学习linux"><a class="markdownIt-Anchor" href="#如何学习linux"></a> 如何学习linux</h3>
+<p>学习 Linux 的一些步骤可能包括：</p>
+<ol>
+<li>
+<p>了解 Linux：首先，了解 Linux 的基本概念，例如它是什么，它的历史，以及它与其他操作系统的区别。</p>
+</li>
+<li>
+<p>安装 Linux：选择一个 Linux 发行版（例如 Ubuntu，Fedora 或 Debian），并在你的计算机上安装它。你可以选择在虚拟机中安装，或者作为主操作系统安装。【ps：推荐使用wsl】</p>
+</li>
+<li>
+<p>学习基本命令：学习如何在终端中使用基本的 Linux 命令，例如 <code>ls</code>（列出目录内容），<code>cd</code>（更改目录），<code>mv</code>（移动或重命名文件），<code>cp</code>（复制文件），等等。【ps：命令见上】</p>
+</li>
+<li>
+<p>学习文件系统：理解 Linux 文件系统的结构，包括 <code>/</code>（根目录），<code>/home</code>（用户目录），<code>/etc</code>（系统配置文件），等等。</p>
+</li>
+<li>
+<p>学习权限和所有权：理解 Linux 的权限系统，包括用户，组，和其他的权限，以及如何使用 <code>chmod</code> 和 <code>chown</code> 命令。</p>
+</li>
+<li>
+<p>学习使用文本编辑器：学习如何使用 Linux 中的文本编辑器，例如 vim 或 nano。</p>
+</li>
+<li>
+<p>学习 shell 脚本：学习如何编写和运行 shell 脚本，以自动化常见任务。</p>
+</li>
+<li>
+<p>学习系统管理：学习如何安装和卸载软件，管理服务，查看系统日志，等等。</p>
+</li>
+<li>
+<p>实践：最好的学习方式就是实践。尝试使用 Linux 完成你的日常任务，例如浏览网页，编辑文档，甚至编程。</p>
+</li>
+<li>
+<p>参考资源：有许多在线资源可以帮助你学习 Linux，例如教程，文档，论坛，甚至是 YouTube 视频。</p>
+</li>
+</ol>
+<p>记住，学习 Linux（或任何新技能）需要时间和耐心。不要急于求成，而是慢慢来，一步一步地学习。</p>
+<h3 id="linux的文件系统的结构是什么样的"><a class="markdownIt-Anchor" href="#linux的文件系统的结构是什么样的"></a> linux的文件系统的结构是什么样的</h3>
+<p>Linux 文件系统的结构是一个层次化的目录结构。以下是一些主要的目录及其用途：</p>
+<ul>
+<li>
+<p><code>/</code>：这是文件系统的根目录。所有其他文件和目录都从这里开始。</p>
+</li>
+<li>
+<p><code>/bin</code>：这个目录包含了许多用户和系统管理员在命令行模式下会使用到的命令。</p>
+</li>
+<li>
+<p><code>/boot</code>：这个目录包含启动 Linux 操作系统所需要的文件，如内核文件和引导加载器。</p>
+</li>
+<li>
+<p><code>/dev</code>：这个目录包含设备文件，Linux 将所有设备视为文件，这些设备文件就存放在这个目录下。</p>
+</li>
+<li>
+<p><code>/etc</code>：这个目录包含所有的系统级配置文件和子目录，你可以在这里找到所有服务的配置文件。</p>
+</li>
+<li>
+<p><code>/home</code>：用户的主目录，每个用户都有一个自己的目录，通常该目录名就是用户的账号名称。</p>
+</li>
+<li>
+<p><code>/lib</code>：这个目录包含系统最基本的动态链接共享库，其作用类似于 Windows 里的 DLL 文件。</p>
+</li>
+<li>
+<p><code>/proc</code>：这是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</p>
+</li>
+<li>
+<p><code>/sbin</code>：这个目录包含一些需要系统管理员权限才能运行的命令。</p>
+</li>
+<li>
+<p><code>/tmp</code>：这个目录用来存放临时文件。</p>
+</li>
+<li>
+<p><code>/usr</code>：这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
+</li>
+<li>
+<p><code>/var</code>：这个目录包含动态数据，如缓存和日志文件。</p>
+</li>
+</ul>
+<p>这些只是 Linux 文件系统中的一部分目录，每个 Linux 发行版可能会有一些差异，但是大部分都遵循这个基本结构。</p>
+<h3 id="linux-文件系统的权限系统是如何工作的"><a class="markdownIt-Anchor" href="#linux-文件系统的权限系统是如何工作的"></a> Linux 文件系统的权限系统是如何工作的？</h3>
+<p>Linux 文件系统的权限系统基于三种类型的用户：文件的所有者（Owner），文件的所属组（Group）和其他用户（Others）。每种用户类型都有三种权限：读（Read），写（Write）和执行（Execute）。</p>
+<p>每个文件或目录的权限可以用一个三位的数字来表示，每位数字代表一种用户类型的权限。数字是由对应权限的值相加得到的，其中读权限的值为4，写权限的值为2，执行权限的值为1。例如，如果一个文件的权限为755，那么文件所有者有读、写、执行权限（7=4+2+1），所属组和其他用户只有读和执行权限（5=4+1）。</p>
+<p>你可以使用 <code>ls -l</code> 命令查看文件或目录的权限。例如，一个文件的权限可能会显示为 <code>-rwxr-xr-x</code>，这表示文件所有者有读、写、执行权限，所属组和其他用户只有读和执行权限。</p>
+<p>你可以使用 <code>chmod</code> 命令修改文件或目录的权限。例如，<code>chmod 755 filename</code> 会将文件 <code>filename</code> 的权限设置为755。</p>
+<p>你还可以使用 <code>chown</code> 和 <code>chgrp</code> 命令修改文件或目录的所有者和所属组。例如，<code>chown username filename</code> 会将文件 <code>filename</code> 的所有者更改为 <code>username</code>，<code>chgrp groupname filename</code> 会将文件 <code>filename</code> 的所属组更改为 <code>groupname</code>。</p>
+<p>这就是 Linux 文件系统权限的基本工作原理。</p>
+<h3 id="文件或目录的所有者和所属组是什么"><a class="markdownIt-Anchor" href="#文件或目录的所有者和所属组是什么"></a> 文件或目录的所有者和所属组是什么</h3>
+<p>在 Linux 系统中，每个文件或目录都有一个所有者和一个所属组。</p>
+<p>所有者（Owner）是创建文件或目录的用户。默认情况下，创建文件或目录的用户就是该文件或目录的所有者。所有者对文件或目录有最高的权限，包括读取、写入和执行文件，以及更改文件的权限和所有权。</p>
+<p>所属组（Group）是包含一组用户的用户组，这个组有特定的访问权限。当一个文件被创建时，创建者所在的组自动成为文件的所属组。所属组中的所有用户都可以根据文件的组权限来访问该文件。</p>
+<p>你可以使用 <code>ls -l</code> 命令查看文件或目录的所有者和所属组。例如，输出可能会是这样：<br />
+友情链接[[#<code>ls -l</code> 中每一列代表的意义]]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r-- 1 owner group 123 Jan 1 00:00 filename</span><br></pre></td></tr></table></figure>
+<p>这表示 <code>filename</code> 的所有者是 <code>owner</code>，所属组是 <code>group</code>。</p>
+<p>你可以使用 <code>chown</code> 命令更改文件或目录的所有者，例如 <code>chown newowner filename</code>。你也可以使用 <code>chgrp</code> 命令更改文件或目录的所属组，例如 <code>chgrp newgroup filename</code>。注意，这些操作通常需要管理员权限。</p>
+<h3 id="如何入门vim"><a class="markdownIt-Anchor" href="#如何入门vim"></a> 如何入门vim</h3>
+<p>《vim：从入门到秃顶》<br />
+Vim 是一个强大的文本编辑器，但是它的学习曲线比较陡峭。以下是一些入门 Vim 的步骤：</p>
+<ol>
+<li>
+<p>安装 Vim：在大多数 Linux 发行版中，Vim 都是预装的。你可以通过在终端输入 <code>vim</code> 来启动它。如果你的系统中没有预装 Vim，你可以通过包管理器（如 <code>apt</code> 或 <code>yum</code>）来安装它。</p>
+</li>
+<li>
+<p>学习 Vim 的模式：Vim 有两个主要的模式：普通模式和插入模式。在普通模式下，你可以使用键盘命令来移动光标，复制和粘贴文本，等等。在插入模式下，你可以插入文本。你可以按 <code>i</code> 键进入插入模式，按 <code>Esc</code> 键返回普通模式。</p>
+</li>
+<li>
+<p>学习基本的 Vim 命令：在普通模式下，你可以使用各种命令来编辑文本。例如，<code>h</code>、<code>j</code>、<code>k</code> 和 <code>l</code> 键可以用来移动光标，<code>dd</code> 命令可以删除一行，<code>yy</code> 命令可以复制一行，<code>p</code> 命令可以粘贴文本。</p>
+</li>
+<li>
+<p>学习如何保存和退出：在普通模式下，你可以输入 <code>:w</code> 命令来保存文件，输入 <code>:q</code> 命令来退出 Vim。如果你想保存文件并退出 Vim，你可以输入 <code>:wq</code> 命令。</p>
+</li>
+<li>
+<p>使用 Vim 教程：Vim 自带一个教程，你可以通过在终端输入 <code>vimtutor</code> 来访问它。这个教程包含了许多实用的练习，可以帮助你熟悉 Vim 的基本操作。</p>
+</li>
+<li>
+<p>实践：最好的学习方式就是实践。尝试使用 Vim 编辑一些实际的文件，这样你可以更好地理解 Vim 的工作方式。</p>
+</li>
+<li>
+<p>学习高级功能：当你熟悉了 Vim 的基本操作后，你可以开始学习 Vim 的高级功能，如宏，视觉模式，分屏，等等。</p>
+</li>
+</ol>
+<p>记住，学习 Vim 需要时间和耐心。不要急于求成，而是慢慢来，一步一步地学习。</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/04/13/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/AscendC%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"
+                                   title="AscendC算子开发笔记"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">AscendC算子开发笔记</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/04/02/%E7%95%AA%E5%89%A7%E6%B5%8B%E8%AF%84/2024-04%E6%96%B0%E7%95%AA%E6%B5%8B%E8%AF%84/"
+                                   title="2024-04新番测评"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">2024-04新番测评</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="nav-text"> 学习资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E8%89%BA%E6%9C%AF"><span class="nav-text"> 命令行的艺术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#man-bash"><span class="nav-text"> man bash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-text"> 管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-text"> 通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text"> 引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text"> 任务管理工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text"> 文件管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ls-l-%E4%B8%AD%E6%AF%8F%E4%B8%80%E5%88%97%E4%BB%A3%E8%A1%A8%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-text"> ls -l 中每一列代表的意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E9%95%BF%E9%97%AE%E9%A2%98"><span class="nav-text"> 一个长问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text"> 网络管理工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0linux"><span class="nav-text"> 从零学习linux！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0linux"><span class="nav-text"> 如何学习linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84"><span class="nav-text"> linux的文件系统的结构是什么样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="nav-text"> Linux 文件系统的权限系统是如何工作的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E7%9A%84%E6%89%80%E6%9C%89%E8%80%85%E5%92%8C%E6%89%80%E5%B1%9E%E7%BB%84%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text"> 文件或目录的所有者和所属组是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%85%A5%E9%97%A8vim"><span class="nav-text"> 如何入门vim</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">040822</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">总字数</span>
+                    <span class="item-value border-box word">256.8k</span>
+                </span>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="nav-text"> 学习资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E8%89%BA%E6%9C%AF"><span class="nav-text"> 命令行的艺术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#man-bash"><span class="nav-text"> man bash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-text"> 管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-text"> 通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text"> 引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text"> 任务管理工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text"> 文件管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ls-l-%E4%B8%AD%E6%AF%8F%E4%B8%80%E5%88%97%E4%BB%A3%E8%A1%A8%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-text"> ls -l 中每一列代表的意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E9%95%BF%E9%97%AE%E9%A2%98"><span class="nav-text"> 一个长问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text"> 网络管理工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0linux"><span class="nav-text"> 从零学习linux！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0linux"><span class="nav-text"> 如何学习linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84"><span class="nav-text"> linux的文件系统的结构是什么样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="nav-text"> Linux 文件系统的权限系统是如何工作的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E7%9A%84%E6%89%80%E6%9C%89%E8%80%85%E5%92%8C%E6%89%80%E5%B1%9E%E7%BB%84%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text"> 文件或目录的所有者和所属组是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%85%A5%E9%97%A8vim"><span class="nav-text"> 如何入门vim</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local-search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+    
+        
+    
+
+</body>
+</html>
