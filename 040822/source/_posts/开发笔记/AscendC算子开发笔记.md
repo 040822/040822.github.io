@@ -3,8 +3,8 @@ title: AscendC算子开发笔记
 math: true
 excerpt: 这是摘要
 date: 2024-04-13 23:10:08
-tags:
-categories:
+tags: 
+categories: 开发笔记
 ---
 
 [text](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/80RC1alpha003/devguide/opdevg/ascendcopdevg/atlas_ascendc_10_0016.html)

@@ -1,7 +1,8 @@
 ---
 title: proteus笔记
 date: 2024-05-08 23:18:43
-tags:
+tags: 
+categories: 开发笔记
 ---
 记录我们使用proteus的一些内容，虽然是proteus笔记但或多或少会涉及模电和数电的知识。
 TODO:或许我们应该搞一个74大家族笔记？

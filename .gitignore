@@ -7,8 +7,12 @@ public/
 .deploy*/
 _multiconfig.yml
 *.jpg
+*.jpeg
 *.png
 *.gif
 python/*
 save/*
 .obsidian
+*.edtz
+*.md.edtz
+*.md.edtz

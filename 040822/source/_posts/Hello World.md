@@ -1,8 +1,9 @@
 ---
 title: Hello World
 sticky: 999
-tag: 博客说明
-categories: 未分类
+tags:
+  - 博客说明
+categories: 博客说明
 excerpt: 芝士博客说明。<img src="https://github.com/040822/picx-images-hosting/raw/master/20240211/hondawhr191.ob2e2va2t68.webp" width = 60% >
 page_cover: https://github.com/040822/picx-images-hosting/raw/master/20240211/hondawhr191.ob2e2va2t68.webp
 page_cover_height: 400
