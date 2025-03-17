@@ -226,7 +226,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Wed Mar 05 2025 23:48:01 GMT+0800">2025-03-05 23:48:01</span>
+                <span class="datetime" data-updated="Sun Mar 16 2025 14:39:40 GMT+0800">2025-03-16 14:39:40</span>
             </span>
         
 
@@ -255,12 +255,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.7k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>9 分钟</span>
             </span>
         
         
@@ -356,10 +356,120 @@ i为太阳光照到物体上的入射光强；r为物体反射到图像传感器
 </ul>
 <p><img   src="IMG-20250302165257897.png"  alt="" ><br />
 <img   src="IMG-20250302165304726.png"  alt="" ></p>
+<h3 id="w2c1-数字图像基础"><a class="markdownIt-Anchor" href="#w2c1-数字图像基础"></a> w2c1 数字图像基础</h3>
+<p><img   src="IMG-20250308202019858.png"  alt="" ></p>
+<h4 id="25"><a class="markdownIt-Anchor" href="#25"></a> 2.5</h4>
+<p>4领域、对角领域（D领域）、8领域。<br />
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>4</mn></msub><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N_4(p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>D</mi></msub><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N_D(p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>8</mn></msub><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N_8(p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span></p>
+<p>邻接：位置相邻+灰度值相近（灰度值相近准则，认为若点p和点q灰度值均属于V，则可说明p、q灰度值相近）<br />
+4、8邻接：灰度值相近+是4领域or8领域。<br />
+m邻接：对角的两点如果能用4连接相连就不建立对角连接；不能则建立。（作用为避免8连接造成的多条通路）<br />
+4邻接<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span>m邻接 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span> 8邻接<br />
+<img   src="IMG-20250308202557363.png"  alt="" ></p>
+<p>通路、闭合通路。</p>
+<p>连通性：S为某个图像自集，对任意<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">p,q\in S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>,如果在S中存在从p到q的通路，则称p在S中与q连通。<br />
+连通分为4连通和8连通。<br />
+连通分量：对于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>p</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">\forall p \in S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">∀</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>, 连通分量为S中连通到p的像素点的集合。连通分量中任意两点连通。<br />
+连通集：如果S只有一个连通分量，说明整个S上任意两点之间连通，那么S叫连通集。<br />
+区域：S是连通集，那么称S为一个区域<br />
+邻接区域：如果两个区域可以合并为一个连通集，则称这两个区域为邻接区域。<br />
+<strong>连通性相关定义必须指明灰度相近集V+连通类型</strong><br />
+<img   src="IMG-20250308222335114.png"  alt="" ><br />
+连通集只看4连通。</p>
+<p><img   src="IMG-20250308203513405.png"  alt="" ><br />
+<img   src="IMG-20250308203541733.png"  alt="" ></p>
+<p>距离、度量：正定对称三角不等式。<br />
+欧氏距离、D4（长+宽）、D8（max（长，宽）），均与x连接无关。<br />
+D8&lt;=欧式&lt;=D4</p>
+<p>Dm距离：m连接下两点之间最短的通路的长度。</p>
+<h4 id="26"><a class="markdownIt-Anchor" href="#26"></a> 2.6</h4>
+<p>线性运算：加减乘除</p>
+<p>加法：降噪，去除叠加性噪声；图像叠加<br />
+减法：对象提取、背景提取、差分算梯度<br />
+乘法：掩码提取，频域乘法（空间域卷积）<br />
+归一化：<br />
+与或非逻辑运算<br />
+空间操作：单像素变化、领域操作、几何空间变换（仿射变换与插值）<br />
+向量和矩阵运算<br />
+概率方法：把灰度值看成随机变量，频率=》概率。</p>
+<h3 id="w2c2-灰度变换与空间滤波"><a class="markdownIt-Anchor" href="#w2c2-灰度变换与空间滤波"></a> w2c2 灰度变换与空间滤波</h3>
+<p><img   src="IMG-20250308204659709.png"  alt="" ></p>
+<h4 id="31"><a class="markdownIt-Anchor" href="#31"></a> 3.1</h4>
+<p>图像增强：提取信息、改善主观视觉效果、改善某个指标。<br />
+空间增强：输入点（x，y）及其领域，输出点（x，y）</p>
+<p>邻域和预定义的操作一起称为 空间滤波器 （掩模、核、模板）？</p>
+<h4 id="32"><a class="markdownIt-Anchor" href="#32"></a> 3.2</h4>
+<p>灰度变换：改变灰度。<br />
+<img   src="IMG-20250308205031145.png"  alt="" ><br />
+反转：增强图像暗色区域中的白色或灰色细节，特别是当黑色面积占主导地位时.<br />
+对数：可以把灰度分布比较窄的转换为比较宽的，用于扩展暗像素<br />
+幂次（伽马变换）：γ&gt;1变暗（右下），γ&lt;1变亮（左上）。<br />
+分段线性变换函数：突出某些细节。包括对比拉伸、灰度切割（改变特定灰度值范围的像素点）、位图切割（舍弃末位）</p>
+<h4 id="33"><a class="markdownIt-Anchor" href="#33"></a> 3.3</h4>
+<p>直方图处理：当直方图均匀分布时，图像最清晰。<br />
+直方图均衡化：<br />
+<img   src="IMG-20250308205734729.png"  alt="" ><br />
+一目了然。<br />
+实际上它想干的事就是拉伸，把最小的对应到0，把最大的对应到1，然后按照累积概率和灰度级数量来重新赋值，使得新的灰度值分布相对均衡。<br />
+<img   src="IMG-20250308205817111.png"  alt="" ></p>
+<p>直方图匹配：把直方图变成指定形状的（比如高斯分布）<br />
+原来的分布r =》均衡化 s=T®<br />
+期望的分布z =》均衡化 v=G（z）<br />
+然后令s=v，则<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><msup><mi>G</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>G</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">z=G^{-1}(s)=G^{-1}(T(r))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br />
+<img   src="IMG-20250308211418976.png"  alt="" ><br />
+<img   src="IMG-20250308211450496.png"  alt="" ></p>
+<p>局部直方图处理: 对局部进行处理、领域变换。计算局部的直方图然后设计变换。</p>
+<h3 id="w3c1-空间滤波"><a class="markdownIt-Anchor" href="#w3c1-空间滤波"></a> w3c1 空间滤波</h3>
+<p><img   src="IMG-20250315161426870.png"  alt="" ></p>
 <h2 id="计算机网络"><a class="markdownIt-Anchor" href="#计算机网络"></a> 计算机网络</h2>
 <p><img   src="IMG-20250302230630823.png"  alt="" ></p>
 <h3 id="w1引言"><a class="markdownIt-Anchor" href="#w1引言"></a> w1引言</h3>
 <p>感觉有点太多了，直接看ppt吧（</p>
+<h4 id="12"><a class="markdownIt-Anchor" href="#12"></a> 1.2</h4>
+<p>网络分类：个域网PAN，局域网LAN，城域网MAN，广域网WAN<br />
+网络核心：分组交换设备（路由器、交换机）+通信链路（光纤电缆等）<br />
+网络边缘：端系统=host主机</p>
+<p>接入网：把host接入边缘路由器，包括有线无线。<br />
+光纤到户FTTH<br />
+数字用户线DSL，电话线拨号上网。国内几乎没了。<br />
+同轴电缆cable：有线电视信号线上网。<br />
+混合光纤同轴电缆HFC：同轴电缆=》光纤=》头端<br />
+无线：WLAN（WIFI）和蜂窝网络（流量）</p>
+<p>物理介质：<br />
+传输单位bit<br />
+光纤、双绞线、同轴电缆、无线电</p>
+<p>网络核心：路由（全局性，确定整个网络上的路径）+转发（本地操作，把数据转发到某个端口）<br />
+电路交换：拉一条专用的电路进行通信。面向连接方式。<br />
+报文交换：路由器存储完整的数据报文之后再发送到下一跳。<br />
+分组交换：把报文拆成多个小分组，发送分组。统计多路复用。时延和灵活性更好。</p>
+<p><img   src="IMG-20250316142410662.png"  alt="" ><br />
+<img   src="IMG-20250316142417325.png"  alt="" ><br />
+<img   src="IMG-20250316142453486.png"  alt="" ></p>
+<h4 id="13"><a class="markdownIt-Anchor" href="#13"></a> 1.3</h4>
+<p>有点乱七八糟，直接看ppt吧。</p>
+<h4 id="14"><a class="markdownIt-Anchor" href="#14"></a> 1.4</h4>
+<p><img   src="IMG-20250316142820620.png"  alt="" ><br />
+<img   src="IMG-20250316142849619.png"  alt="" ></p>
+<h4 id="15"><a class="markdownIt-Anchor" href="#15"></a> 1.5</h4>
+<p>速率：比特率bps<br />
+带宽，网络带宽：数字信道能传输的最高比特率。网络瓶颈带宽：短板效应。<br />
+吞吐量：单位时间内通过某个网络的数据量，实际测量值。<br />
+时延：发送、处理、传播、排队，合起来为总时延。</p>
+<ul>
+<li>发送：又叫传输时延，主机路由器将分组发送出去的时间。=分组大小/发送速率</li>
+<li>传播：电磁波在信道中传播所需时间。=传输距离/电磁波速率（接近光速）</li>
+<li>处理：交换节点为了处理数据所花费的时间。</li>
+<li>排队：节点缓存队列中排队所花的时间，取决于实时的通信情况。<br />
+往返时延RTT：发送到接收回波总时间<br />
+时延带宽积=传播时延x带宽<br />
+丢包率<br />
+时延抖动<br />
+利用率</li>
+</ul>
+<p><img   src="IMG-20250316143831676.png"  alt="" ><br />
+<img   src="IMG-20250316143852126.png"  alt="" ></p>
+<h3 id="w2应用层"><a class="markdownIt-Anchor" href="#w2应用层"></a> w2应用层</h3>
+<p>1.6~1.8略</p>
 <h2 id="雷达原理"><a class="markdownIt-Anchor" href="#雷达原理"></a> 雷达原理</h2>
 <p>带一至今为止最恐怖的课程，成绩为15+25+60，期中期末两次考试占比高达85%。<br />
 <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/677135205" >【万字长文】雷达基础知识（第二部分） - 知乎<i class="fas fa-external-link-alt"></i></a></p>
@@ -460,7 +570,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w2c1 数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#25"><span class="nav-text"> 2.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26"><span class="nav-text"> 2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c2-%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w2c2 灰度变换与空间滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#31"><span class="nav-text"> 3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32"><span class="nav-text"> 3.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33"><span class="nav-text"> 3.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c1-%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w3c1 空间滤波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-text"> 1.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13"><span class="nav-text"> 1.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14"><span class="nav-text"> 1.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15"><span class="nav-text"> 1.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text"> w2应用层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -499,7 +609,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">121.9k</span>
+                    <span class="item-value border-box word">137.6k</span>
                 </span>
             
 
@@ -599,7 +709,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w2c1 数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#25"><span class="nav-text"> 2.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26"><span class="nav-text"> 2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c2-%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w2c2 灰度变换与空间滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#31"><span class="nav-text"> 3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32"><span class="nav-text"> 3.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33"><span class="nav-text"> 3.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c1-%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w3c1 空间滤波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-text"> 1.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13"><span class="nav-text"> 1.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14"><span class="nav-text"> 1.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15"><span class="nav-text"> 1.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text"> w2应用层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
     </div>
 </div>
 
