@@ -226,7 +226,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sat Mar 29 2025 13:35:43 GMT+0800">2025-03-29 13:35:43</span>
+                <span class="datetime" data-updated="Sun Mar 30 2025 17:08:36 GMT+0800">2025-03-30 17:08:36</span>
             </span>
         
 
@@ -255,12 +255,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>3.5k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>5k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>12 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>18 分钟</span>
             </span>
         
         
@@ -358,6 +358,91 @@ sigmoid function：又称logistic function<br />
 <img   src="Pasted%20image%2020250329133258.png"  alt="" ><br />
 性质：概率合为1<br />
 损失函数（交叉熵）推导看ppt。</p>
+<h3 id="lecture-2-convolution-neural-network-1"><a class="markdownIt-Anchor" href="#lecture-2-convolution-neural-network-1"></a> Lecture 2 Convolution Neural Network 1</h3>
+<h4 id="21-computational-graph-of-linear-models"><a class="markdownIt-Anchor" href="#21-computational-graph-of-linear-models"></a> 2.1 Computational Graph of Linear Models</h4>
+<p>乍一看小标题以为是反向传播的计算图，不由得心里一惊，仔细看才发现是正向传播的计算图。</p>
+<h4 id="22-fully-connected-layer"><a class="markdownIt-Anchor" href="#22-fully-connected-layer"></a> 2.2 Fully-connected Layer</h4>
+<p>这里开始讲梯度计算，引入反向传播。<br />
+全连接层、交叉熵的梯度计算都还好，这里重点搞了softmax层的梯度计算。</p>
+<p>Multi-Layer Perceptron：一堆全连接层+激活函数层。<br />
+<img   src="IMG-20250330134928433.png"  alt="" ><br />
+重要：如果各层全连接层之间没有激活函数的话，那么多层全连接层实际上可以等效为一层。<br />
+（上式中上标不表示幂次，只表示上标）<br />
+下边举MNIST的例子。</p>
+<h4 id="23-some-other-layers-for-modern-neural-network"><a class="markdownIt-Anchor" href="#23-some-other-layers-for-modern-neural-network"></a> 2.3 Some Other Layers for Modern Neural Network</h4>
+<p>激活函数层：<br />
+Sigmoid：<br />
+<img   src="IMG-20250330135321950.png"  alt="" ><br />
+Tanh (hyperbolic tangent function)<br />
+<img   src="IMG-20250330135347271.png"  alt="" ><br />
+ReLU：<br />
+<img   src="Pasted%20image%2020250330135408.png"  alt="" ><br />
+Leaky ReLU： ReLU小于0的部分来个斜线，所以说是”Leaky“（泄露），可以联想二极管的漏电流。<br />
+<img   src="Pasted%20image%2020250330135423.png"  alt="" ><br />
+PReLU layer<br />
+公式同Leaky ReLU，但是那个α是可学习的参数，而不是超参数。<br />
+P：Parametric，把超参数给参数化，变成可学习参数的意思。</p>
+<p>激活函数部分具体内容见ppt，都是比较熟悉的内容就不放出来了。</p>
+<p>Loss function：<br />
+L2（MSE），L1（用得少）</p>
+<p>Why do we need “deep” neural networks：<br />
+相关研究很多，以下是其中一篇，<a class="link"   target="_blank" rel="noopener" href="https://arxiv.org/abs/1610.04161" >[1610.04161] 为什么使用深度神经网络进行函数逼近？<i class="fas fa-external-link-alt"></i></a><br />
+众所周知3层的神经网络就能逼近任意非线性函数，但”深度“学习还是比”宽度“学习应用的广，这是为啥？主要还是学习效率的时期，拟合复杂函数时，深度比宽度所需的神经元数量更少。<br />
+老师没有给相关文章，咱们有时间搞一下。</p>
+<p><img   src="Pasted%20image%2020250330140440.png"  alt="" ><br />
+<img   src="Pasted%20image%2020250330140450.png"  alt="" ><br />
+层之间的各种操作，在应用方面很普遍但在理论方面确实提得比较少。</p>
+<p>Batch Normalization Layer：<br />
+Ioffe and Szegedy,“Batch normalization: Accelerating deep network training by reducing internal covariate shift”, ICML 2015</p>
+<p>covariance shift，协变量偏移，简单理解就是输入数据的分布和实际数据的分布（抽象意义上所有数据的总分布）之间不太一样。课件上举的例子是，mini-batch和整个大batch的分布也有一定区别。 为了减少这种区别，减少数据分布的方差带来的影响，就需要normalization了。<br />
+归一化算是机器学习领域常用方法了。</p>
+<p>BN层把输入的mini-batch的每一个特征向量都给归一化。<br />
+<img   src="Pasted%20image%2020250330163451.png"  alt="" ><br />
+这个公式有点抽象。实际的意思就是把mini-batch中的每一个数据拿出来算方差和均值，然后做归一化处理。归一化的时候分母加一个微小量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">ϵ</span></span></span></span>，防止方差为零的除零错误；然后来个系数γ和偏置β来进一步调控。<br />
+<img   src="Pasted%20image%2020250330163757.png"  alt="" ><br />
+实际操作中往往并不是直接算方差和均值，而是用一种递推的方式来持续估计（running estimate），这里ppt没细讲。<br />
+<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/645070030" >样本均值和方差的在线更新公式 - 知乎<i class="fas fa-external-link-alt"></i></a><br />
+应该是这个意思？</p>
+<p>测试时的归一化方法：</p>
+<ul>
+<li>用测试数据算方差均值</li>
+<li>用训练时持续估计的方差和均值</li>
+<li>用整个或者一部分训练数据来计算方差和均值——每层都算（注意BN层显然不止一层。这就是running estimate的优势所在）<br />
+BN好处：</li>
+<li>训练更快。虽然计算量增多，但是由于方差减小，训练稳定性提高，收敛更快，所以说整体还是更快的</li>
+<li>Allows higer learning rates：同上，因为稳定性提高，所以说学习率适当提高也不会造成影响</li>
+<li>使权重易于初始化：emmm这个不太能理解。一般初始化和归一化都要做的吧。</li>
+<li>使更多的激活函数可行？没明白是什么意思。</li>
+</ul>
+<p>需要注意的是BN层和归一化方法并不完全一样。</p>
+<p>Dropout layer：<br />
+众所周知深度学习通常使用了大量的神经元，在训练<strong>小数据</strong>的任务时很容易过拟合，神经网络中很多神经元也会”摸鱼“不干活（因为只需要较少的神经元就足以拟合训练数据了），所以说引入dropout层，去随机把一定比例的神经元的参数置零（实效化），使其他剩下的神经元被迫干活。<br />
+<img   src="Pasted%20image%2020250330165308.png"  alt="" ><br />
+至于大规模数据集用dropout层有没有用就是另一个话题了，在llm时代还是值得研究的。</p>
+<p>Modern MLPs：<br />
+全连接层+PReLU or Leaky ReLU（等不那么原始的激活函数）+BN层，甚至还可以搞点分支层、合并层或者搞个残差。<br />
+不过最原始的ReLU和Sigmoid仍然占据不小的市场。<br />
+<img   src="Pasted%20image%2020250330165610.png"  alt="" ></p>
+<h4 id="24-convolutional-neural-network"><a class="markdownIt-Anchor" href="#24-convolutional-neural-network"></a> 2.4 Convolutional Neural Network</h4>
+<p>减少全连接=》稀疏连接 and 共享参数<br />
+receptive field：感受野<br />
+<img   src="Pasted%20image%2020250330165818.png"  alt="" ><br />
+<img   src="Pasted%20image%2020250330165911.png"  alt="" ></p>
+<p>总之卷积神经网络的卷积核就是这么个东西：用一个3x3或者5x5这样不太大的卷积核去对输入层做卷积，从全连接层的角度而言，卷积层就是n个卷积核的复制粘贴（共享参数），同时输出量通常只由几个输入量所决定（稀疏连接）<br />
+从卷积层的角度来看的话又是另一种（本质一样但理解不同的）看法<br />
+<img   src="Pasted%20image%2020250330170231.png"  alt="" ><br />
+下边用了大量图来演示卷积层的工作原理和其中的一些方法。<br />
+stride：卷积核移动的步长，1的话一格一格移动，2的话隔一格移动<br />
+padding：为了解决卷积操作使得输入输出大小不一致，在输入图像四周补数字（一般补零）。在图像处理那边有更多的padding方法。<br />
+这边有一堆计算输出大小、计算量、参数量的计算过程，建议看ppt。</p>
+<p>Pooling Layer：降采样、缩图<br />
+Kernel Size： pooling核的大小，这里设2x2<br />
+Stride：步移<br />
+Pooling function：</p>
+<ul>
+<li>max pooling：2x2中选最大</li>
+<li>avg：取平均</li>
+</ul>
 <h2 id="图像处理"><a class="markdownIt-Anchor" href="#图像处理"></a> 图像处理</h2>
 <h3 id="w1c1-绪论"><a class="markdownIt-Anchor" href="#w1c1-绪论"></a> w1c1 绪论</h3>
 <p><img   src="IMG-20250302162247392.png"  alt="" ><br />
@@ -647,7 +732,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lecture-1-course-introduction"><span class="nav-text"> Lecture 1 Course Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-history-of-artificial-intelligence"><span class="nav-text"> 1.1 History of artificial intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-introduction-to-machine-learning"><span class="nav-text"> 1.2 Introduction to machine learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-introduction-to-deep-learning"><span class="nav-text"> 1.3 Introduction to deep learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-review-of-linear-regression"><span class="nav-text"> 1.4 Review of Linear Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-review-of-logistic-classification"><span class="nav-text"> 1.5 Review of Logistic Classification</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w2c1 数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#25"><span class="nav-text"> 2.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26"><span class="nav-text"> 2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c2-%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w2c2 灰度变换与空间滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#31"><span class="nav-text"> 3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32"><span class="nav-text"> 3.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33"><span class="nav-text"> 3.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c1-%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w3c1 空间滤波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-text"> 1.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13"><span class="nav-text"> 1.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14"><span class="nav-text"> 1.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15"><span class="nav-text"> 1.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text"> w2应用层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lecture-1-course-introduction"><span class="nav-text"> Lecture 1 Course Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-history-of-artificial-intelligence"><span class="nav-text"> 1.1 History of artificial intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-introduction-to-machine-learning"><span class="nav-text"> 1.2 Introduction to machine learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-introduction-to-deep-learning"><span class="nav-text"> 1.3 Introduction to deep learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-review-of-linear-regression"><span class="nav-text"> 1.4 Review of Linear Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-review-of-logistic-classification"><span class="nav-text"> 1.5 Review of Logistic Classification</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lecture-2-convolution-neural-network-1"><span class="nav-text"> Lecture 2 Convolution Neural Network 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21-computational-graph-of-linear-models"><span class="nav-text"> 2.1 Computational Graph of Linear Models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-fully-connected-layer"><span class="nav-text"> 2.2 Fully-connected Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-some-other-layers-for-modern-neural-network"><span class="nav-text"> 2.3 Some Other Layers for Modern Neural Network</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-convolutional-neural-network"><span class="nav-text"> 2.4 Convolutional Neural Network</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w2c1 数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#25"><span class="nav-text"> 2.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26"><span class="nav-text"> 2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c2-%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w2c2 灰度变换与空间滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#31"><span class="nav-text"> 3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32"><span class="nav-text"> 3.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33"><span class="nav-text"> 3.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c1-%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w3c1 空间滤波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-text"> 1.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13"><span class="nav-text"> 1.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14"><span class="nav-text"> 1.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15"><span class="nav-text"> 1.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text"> w2应用层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -686,7 +771,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">142.3k</span>
+                    <span class="item-value border-box word">158.4k</span>
                 </span>
             
 
@@ -786,7 +871,7 @@ IEEE定义：雷达是对目标进行探测与定位的电磁设备。</p>
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lecture-1-course-introduction"><span class="nav-text"> Lecture 1 Course Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-history-of-artificial-intelligence"><span class="nav-text"> 1.1 History of artificial intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-introduction-to-machine-learning"><span class="nav-text"> 1.2 Introduction to machine learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-introduction-to-deep-learning"><span class="nav-text"> 1.3 Introduction to deep learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-review-of-linear-regression"><span class="nav-text"> 1.4 Review of Linear Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-review-of-logistic-classification"><span class="nav-text"> 1.5 Review of Logistic Classification</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w2c1 数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#25"><span class="nav-text"> 2.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26"><span class="nav-text"> 2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c2-%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w2c2 灰度变换与空间滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#31"><span class="nav-text"> 3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32"><span class="nav-text"> 3.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33"><span class="nav-text"> 3.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c1-%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w3c1 空间滤波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-text"> 1.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13"><span class="nav-text"> 1.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14"><span class="nav-text"> 1.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15"><span class="nav-text"> 1.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text"> w2应用层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ece371-neural-networks-and-deep-learning"><span class="nav-text"> ECE371 Neural Networks and Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lecture-1-course-introduction"><span class="nav-text"> Lecture 1 Course Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-history-of-artificial-intelligence"><span class="nav-text"> 1.1 History of artificial intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-introduction-to-machine-learning"><span class="nav-text"> 1.2 Introduction to machine learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-introduction-to-deep-learning"><span class="nav-text"> 1.3 Introduction to deep learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-review-of-linear-regression"><span class="nav-text"> 1.4 Review of Linear Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-review-of-logistic-classification"><span class="nav-text"> 1.5 Review of Logistic Classification</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lecture-2-convolution-neural-network-1"><span class="nav-text"> Lecture 2 Convolution Neural Network 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21-computational-graph-of-linear-models"><span class="nav-text"> 2.1 Computational Graph of Linear Models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-fully-connected-layer"><span class="nav-text"> 2.2 Fully-connected Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-some-other-layers-for-modern-neural-network"><span class="nav-text"> 2.3 Some Other Layers for Modern Neural Network</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-convolutional-neural-network"><span class="nav-text"> 2.4 Convolutional Neural Network</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text"> 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> w1c1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w1c2%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w1c2数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21"><span class="nav-text"> 2.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22"><span class="nav-text"> 2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23"><span class="nav-text"> 2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24"><span class="nav-text"> 2.4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="nav-text"> w2c1 数字图像基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#25"><span class="nav-text"> 2.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26"><span class="nav-text"> 2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2c2-%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w2c2 灰度变换与空间滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#31"><span class="nav-text"> 3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32"><span class="nav-text"> 3.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33"><span class="nav-text"> 3.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c1-%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="nav-text"> w3c1 空间滤波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w1%E5%BC%95%E8%A8%80"><span class="nav-text"> w1引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-text"> 1.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13"><span class="nav-text"> 1.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14"><span class="nav-text"> 1.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15"><span class="nav-text"> 1.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w2%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text"> w2应用层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B7%E8%BE%BE%E5%8E%9F%E7%90%86"><span class="nav-text"> 雷达原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text"> 1 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E5%B0%84%E6%9C%BA"><span class="nav-text"> 2 发射机</span></a></li></ol></li></ol>
     </div>
 </div>
 

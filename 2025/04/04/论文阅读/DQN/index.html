@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="040822">
+    
+    <title>
+        
+            DQN |
+        
+        040822&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/custom-1.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"040822.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"040822's Blog","author":"040822","avatar":"/images/logo.jpg","logo":"/images/logo.jpg","favicon":"/images/logo.jpg","article_img_align":"left"},"menu":{"archives":"/archives","categories":"/categories","links":"/links","photos":"/photos"},"first_screen":{"enable":true,"background_img":"/images/gal_1.png","background_img_dark":"/images/bg.svg","description":"我是040822，一个喜欢折腾的人，这是我的个人博客，欢迎来到我的世界！","hitokoto":true},"social_contact":{"enable":true,"links":{"github":"https://github.com/040822","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"wxflwyr@126.com"}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":["/css/custom-1.css"],"js":[null]},"root":"","mathjax":{"enable":true,"per_page":false,"cdn":"//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"},"source_data":{"links":[{"title":"好基友们"},{"name":"y1-fan's Blog","link":"https://y1-fan.github.io/","description":null,"avatar":"/images/78839187.jpg"},{"name":"Keep主题使用手册","link":"https://keep-docs.xpoet.cn/","description":null,"avatar":"/images/logo.svg"}],"photos":[{"url":"D:\\wx\\office\\ahaic\\040822.github.io\\040822\\source\\images\\pixiv\\100905849_p0.png","name":"100905849_p0.png"},{"url":"D:\\wx\\office\\ahaic\\040822.github.io\\040822\\source\\images\\pixiv\\101160816_p0.jpg","name":"101160816_p0.jpg"}]},"version":"4.1.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               040822&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                
+                                归档
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                
+                                分类
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                
+                                友链
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/photos"
+                            >
+                                
+                                相册
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >分类</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links"
+                    >友链</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/photos"
+                    >相册</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        DQN
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/logo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">040822</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-04-04 21:42:51</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Fri Apr 04 2025 21:44:36 GMT+0800">2025-04-04 21:44:36</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>7.3k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>25 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <p><a class="link"   target="_blank" rel="noopener" href="https://arxiv.org/abs/1312.5602" >[1312.5602] Playing Atari with Deep Reinforcement Learning<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="翻译使用深度强化学习玩雅达利游戏"><a class="markdownIt-Anchor" href="#翻译使用深度强化学习玩雅达利游戏"></a> 翻译：使用深度强化学习玩雅达利游戏</h1>
+<h2 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h2>
+<p>我们介绍了第一个深度学习模型，该模型能够直接从高维感官输入（如视觉）中成功学习控制策略，使用强化学习。该模型是一个卷积神经网络，通过一种变体的Q学习进行训练，其输入为原始像素，输出为估计未来奖励的价值函数。我们将该方法应用于七款来自Arcade Learning Environment的雅达利2600游戏，未对架构或学习算法进行调整。我们发现它在六款游戏中优于所有先前的方法，并在三款游戏中超越了人类专家。</p>
+<h2 id="1-引言"><a class="markdownIt-Anchor" href="#1-引言"></a> 1 引言</h2>
+<p>从高维感官输入（如视觉和语音）中直接学习控制代理是强化学习（RL）长期面临的挑战之一。大多数在这些领域成功的RL应用依赖于手工设计特征与线性价值函数或策略表示相结合。显然，这些系统的性能严重依赖于特征表示的质量。</p>
+<p>深度学习的最新进展使得从原始感官数据中提取高层次特征成为可能，从而在计算机视觉和语音识别方面取得了突破。这些方法利用了一系列神经网络架构，包括卷积网络、多层感知器、受限玻尔兹曼机和循环神经网络，并且利用了监督和无监督学习。自然会问，类似的技术是否也能对具有感官数据的强化学习有益。</p>
+<p>然而，从深度学习的角度来看，强化学习提出了几个挑战。首先，迄今为止大多数成功的深度学习应用都需要大量的手工标记的训练数据。另一方面，RL算法必须能够从一个稀疏、嘈杂和延迟的标量奖励信号中学习。动作和结果奖励之间的延迟，可能长达数千个时间步，与监督学习中输入和目标之间的直接关联相比，显得尤为艰巨。另一个问题是，大多数深度学习算法假设数据样本是独立的，而在强化学习中通常遇到高度相关的状态序列。此外，在RL中，随着算法学习新行为，数据分布会发生变化，这对假设固定底层分布的深度学习方法来说可能是有问题的。</p>
+<p>本文展示了卷积神经网络可以克服这些挑战，从复杂RL环境中的原始视频数据中学习成功的控制策略。网络通过Q学习算法的一种变体进行训练，并使用随机梯度下降来更新权重。为了缓解相关数据和不稳定分布的问题，我们使用了经验回放机制，该机制随机采样之前的转换，从而平滑了过去许多行为的训练分布。</p>
+<p>我们将我们的方法应用于一系列在Arcade Learning Environment（ALE）中实现的雅达利2600游戏。雅达利2600是一个具有挑战性的RL测试平台，向代理提供高维视觉输入（210 x 160 RGB视频，60Hz）和一组多样化和有趣的任务，这些任务被设计为对人类玩家来说很难。我们的目标是创建一个单一的神经网络代理，能够成功地学习尽可能多的游戏。网络没有提供任何特定于游戏的信息或手工设计的视觉特征，也没有接触到模拟器的内部状态；它只从视频输入、奖励和终止信号以及可能的动作集合中学习——就像人类玩家一样。此外，网络架构和用于训练的所有超参数在所有游戏中保持不变。到目前为止，网络在我们尝试的七款游戏中有六款的表现优于所有先前的RL算法，并在三款游戏中超越了人类专家。图1提供了五款用于训练的游戏的示例屏幕截图。</p>
+<h2 id="2-背景"><a class="markdownIt-Anchor" href="#2-背景"></a> 2 背景</h2>
+<p>我们考虑代理与环境E（在这种情况下是雅达利模拟器）交互的任务，在一系列动作、观察和奖励中。在每个时间步，代理从合法游戏动作集A={1,…,K}中选择一个动作at。动作传递给模拟器并修改其内部状态和游戏分数。一般来说，E可能是随机的。模拟器的内部状态不被代理观察到；相反，它观察到模拟器的图像xt∈R^d，这是一个代表当前屏幕的原始像素值的向量。此外，它接收一个奖励rt，代表游戏分数的变化。请注意，一般来说，游戏分数可能取决于整个先前的动作和观察序列；关于一个动作的反馈可能在经过数千个时间步后才收到。</p>
+<p>由于代理只观察到当前屏幕的图像，任务是部分可观察的，许多模拟器状态在感知上是等价的，即仅从当前屏幕xt无法完全理解当前情况。因此，我们考虑动作和观察的序列st=x1,a1,x2,…,a_{t-1},xt，并学习依赖于这些序列的游戏策略。假设模拟器中的所有序列都在有限的时间步内终止。这种形式主义产生了一个大但有限的马尔可夫决策过程（MDP），其中每个序列都是一个独特的状态。因此，我们可以将标准的强化学习方法应用于MDP，只需将完整的序列st作为时间t的状态表示。</p>
+<p>代理的目标是通过选择动作以最大化未来奖励的方式与模拟器交互。我们做出标准假设，未来奖励按每时间步的因子γ折扣，并定义时间t的未来折扣回报为Rt=∑_{t’=t}<sup>{T}γ</sup>{t’-t}rt’，其中T是游戏终止的时间步。我们定义最优动作值函数Q*(s,a)为在看到某个序列s后采取某个动作a所能实现的最大预期回报，Q*(s,a)∈max_πE[Rt|st=s,at=a,π]，其中π是将序列映射到动作（或动作上的分布）的策略。</p>
+<p>最优动作值函数遵循一个重要的称为贝尔曼方程的身份。这是基于以下直觉：如果下一个时间步序列s’的最优值Q*(s’,a’)对于所有可能的动作a’都是已知的，那么最优策略是选择动作a’，最大化预期值r+γQ*(s’,a’)，</p>
+<p>Q*(s,a)=E_{s’∼E}[r+γmax_{a’}Q*(s’,a’)|s,a] (1)</p>
+<p>许多强化学习算法的基本思想是通过使用贝尔曼方程作为迭代更新来估计动作值函数，Q_{i+1}(s, a)=E[r+γmax_{a’}Q_i(s’,a’)|s, a]。这样的值迭代算法收敛到最优动作值函数，Q_i→Q<em>当i→∞时[23]。实际上，这种方法根本不实用，因为动作值函数是为每个序列单独估计的，没有任何泛化。相反，通常使用函数逼近器来估计动作值函数，Q(s, a;θ)≈Q</em>(s, a)。在强化学习社区中，这通常是一个线性函数逼近器，但有时也使用非线性函数逼近器，例如神经网络。我们称带有权重θ的神经网络函数逼近器为Q网络。可以通过最小化在每次迭代中变化的损失函数序列L_i(θ_i)来训练Q网络，</p>
+<p>L_i(θ_i)=E_{s,a∼ρ(⋅)}[(y_i-Q(s,a;θ_i))^2], (2)</p>
+<p>其中y_i=E_{s’∼E}[r+γmax_{a’} Q(s’,a’;θ_{i-1})|s, a]是迭代i的目标，ρ(s, a)是我们称为行为分布的序列s和动作a的概率分布。在优化损失函数L_i(θ_i)时，前一次迭代的参数θ_{i-1}保持固定。请注意，目标依赖于网络权重；这与监督学习中使用固定的目标不同。通过对损失函数求导，我们得到以下梯度，</p>
+<p>∇_{θ_i}L_i(θ_i)=E_{s,a∼ρ(⋅);s’∼E}[(r+γmax_{a’}Q(s’,a’;θ_{i-1})-Q(s,a;θ_i))∇_{θ_i}Q(s,a;θ_i)]. (3)</p>
+<p>与其计算上述梯度的完整期望，通常通过随机梯度下降优化损失函数更为方便。如果在每个时间步更新权重，并且期望被行为分布ρ和模拟器E的单个样本替换，则我们得到了熟悉的Q学习算法[26]。</p>
+<p>请注意，这个算法是无模型的：它直接使用模拟器E的样本来解决强化学习任务，而不显式构建E的估计。它也是无策略的：它学习贪婪策略a=max_a Q(s, a;θ)，同时遵循确保充分探索状态空间的行为分布。在实践中，行为分布通常通过ε-贪婪策略选择，该策略以概率1-ε跟随贪婪策略，并以概率ε选择随机动作。</p>
+<h2 id="3-相关工作"><a class="markdownIt-Anchor" href="#3-相关工作"></a> 3 相关工作</h2>
+<p>也许强化学习最著名的成功故事是TD-gammon，一个通过强化学习和自玩完全学会玩西洋双陆棋的程序，并达到了超人类的水平[24]。TD-gammon使用类似于Q学习的无模型强化学习算法，并使用一个带有一层隐藏层的多层感知器来近似价值函数。</p>
+<p>然而，试图跟进TD-gammon的早期尝试，包括将其方法应用于国际象棋、围棋和国际跳棋，都不太成功。这导致了一种广泛的信念，即TD-gammon方法是特殊案例，只在西洋双陆棋中有效，也许是因为骰子掷出的随机性有助于探索状态空间，并且使价值函数特别平滑[19]。</p>
+<p>此外，已经证明，将无模型强化学习算法（如Q学习）与非线性函数逼近器结合[25]，或者实际上与无策略学习结合[1]可能会导致Q网络发散。随后，强化学习的大部分工作集中在使用具有更好收敛保证的线性函数逼近器上[25]。</p>
+<p>最近，人们对结合深度学习和强化学习重新产生了兴趣。深度神经网络已被用于估计环境[21]；受限玻尔兹曼机已被用于估计价值函数[9]；或策略[9]。此外，Q学习的发散问题已通过梯度时间差方法部分解决。这些方法在使用非线性函数逼近器评估固定策略时被证明是收敛的[14]；或在使用线性函数逼近学习控制策略时使用Q学习的受限变体[15]。然而，这些方法尚未扩展到非线性控制。</p>
+<p>也许与我们自己的方法最相似的先前工作是神经拟合Q学习（NFQ）[20]。NFQ优化方程2中的损失函数序列，使用RPROP算法更新Q网络的参数。然而，它使用批量更新，每次迭代的计算成本与数据集的大小成正比，而我们考虑的是随机梯度更新，每次迭代的低常数成本，并且可以扩展到大数据集。NFQ还成功应用于使用纯粹视觉输入的简单现实世界控制任务，首先使用深度自编码器学习任务的低维表示，然后将该表示应用于NFQ[12]。相比之下，我们的方法从视觉输入端到端地应用强化学习；因此，它可能会学习直接与区分动作值相关的特征。Q学习之前也与经验回放和一个简单的神经网络结合[13]，但同样是从低维状态开始，而不是从原始视觉输入开始。</p>
+<p>使用雅达利2600模拟器作为强化学习平台的做法是由[3]引入的，他们应用了标准强化学习算法与线性函数逼近和通用视觉特征。随后，通过使用更多的特征和使用拔河哈希将特征随机投影到低维空间来改进结果[2]。HyperNEAT进化架构[8]也被应用于雅达利平台，其中它被用来进化（分别为每个不同的游戏）代表该游戏的策略的神经网络。当针对确定性序列反复训练使用模拟器的重置功能时，这些策略能够在几款雅达利游戏中利用设计缺陷。</p>
+<h2 id="4-深度强化学习"><a class="markdownIt-Anchor" href="#4-深度强化学习"></a> 4 深度强化学习</h2>
+<p>计算机视觉和语音识别最近的突破依赖于在大规模训练集上高效训练深度神经网络。最成功的方法是直接从原始输入进行训练，使用基于随机梯度下降的轻量级更新。通过向深度神经网络提供足够的数据，通常可以学习到比手工特征更好的表示[11]。这些成功激励了我们采用强化学习的方法。我们的目标是将强化学习算法连接到直接操作RGB图像的深度神经网络，并通过使用随机梯度更新有效地处理训练数据。</p>
+<p>Tesauro的TD-Gammon架构为此类方法提供了一个起点。该架构更新估计价值函数的网络参数，直接从算法与环境（或在西洋双陆棋的情况下通过自玩）的互动中抽取的经验样本st,a_{t},r_{t},s_{t+1},a_{t+1}。由于这种方法能够在20年前超越最佳人类西洋双陆棋玩家，自然会想知道二十年的硬件改进，加上现代深度神经网络架构和可扩展的RL算法是否会产生显著的进步。</p>
+<p>与TD-Gammon和类似的在线方法相比，我们利用了一种称为经验回放的技术[13]，我们在每个时间步存储代理的经验e_{t}=(s_{t},a_{t},r_{t},s_{t+1})在一个数据集D=e1,…,eN中，跨越多个回合池化到一个回放记忆。在算法的内环中，我们对从存储样本池中随机抽取的经验样本e~D应用Q学习更新，或小批量更新。在执行经验回放后，代理根据ε-贪婪策略选择并执行一个动作。由于使用任意长度的历史作为神经网络的输入可能很困难，我们的Q函数在由函数φ产生的历史的固定长度表示上工作。我们称之为深度Q学习的完整算法，如算法1所示。</p>
+<p>这种方法有几个优于标准在线Q学习[23]的优势。首先，每个经验步骤都可能在许多权重更新中被使用，这允许更高的数据效率。</p>
+<table>
+<thead>
+<tr>
+<th>算法1 带有经验回放的深度Q学习</th>
+<th>算法1 带有经验回放的深度Q学习</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化回放记忆D到容量N</td>
+<td></td>
+</tr>
+<tr>
+<td>使用随机权重初始化动作值函数Q</td>
+<td></td>
+</tr>
+<tr>
+<td>对于回合=1,M进行</td>
+<td></td>
+</tr>
+<tr>
+<td>初始化序列s_{1}={x_{1}}和预处理的序列φ_{1}=φ(s_{1})</td>
+<td></td>
+</tr>
+<tr>
+<td>对于t=1,T进行</td>
+<td></td>
+</tr>
+<tr>
+<td>以概率ε选择一个随机动作a_{t}</td>
+<td></td>
+</tr>
+<tr>
+<td>否则选择a_{t}=max_{a}Q^{*}(φ(s_{t}),a;θ)</td>
+<td></td>
+</tr>
+<tr>
+<td>在模拟器中执行动作a_{t}并观察奖励r_{t}和图像x_{t+1}</td>
+<td></td>
+</tr>
+<tr>
+<td>设置s_{t+1}=s_{t},a_{t},x_{t+1}并预处理φ_{t+1}=φ(s_{t+1})</td>
+<td></td>
+</tr>
+<tr>
+<td>将转换(φ_{t},a_{t},r_{t},φ_{t+1})存储在D中</td>
+<td></td>
+</tr>
+<tr>
+<td>从D中随机抽取转换(φ_{j},a_{j},r_{j},φ_{j+1})的小批量样本</td>
+<td></td>
+</tr>
+<tr>
+<td>对于终端φ_{j+1}设置r_{j}</td>
+<td></td>
+</tr>
+<tr>
+<td>对于非终端φ_{j+1}设置y_{j}=r_{j}+γmax_{a’}Q(φ_{j+1},a’;θ)</td>
+<td></td>
+</tr>
+<tr>
+<td>根据方程3对(y_{j}-Q(φ_{j},a_{j};θ))^2执行梯度下降步骤</td>
+<td>方程3</td>
+</tr>
+<tr>
+<td>结束for</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>其次，直接从连续样本中学习效率不高，因为样本之间有很强的相关性；随机化样本打破了这些相关性，因此减少了更新的方差。第三，当在学习过程中策略时，当前的参数决定了下一个数据样本，参数将在其上训练。例如，如果最大化动作是向左移动，那么训练样本将被来自左侧的样本所主导；如果最大化动作切换到右侧，那么训练分布也会切换。很容易看出如何出现不希望的反馈回路，参数可能会陷入不良的局部最小值，甚至灾难性地发散[25]。通过使用经验回放，行为分布在它的许多先前状态上平均，平滑了学习并避免了参数的振荡或发散。请注意，当通过经验回放学习时，有必要学习无策略（因为我们的当前参数与生成样本时使用的参数不同），这促使选择了Q学习。</p>
+<p>在实践中，我们的算法仅在回放记忆中存储最后N个经验元组，并在执行更新时从D中均匀随机抽样。这种方法在某些方面是有限的，因为内存缓冲区不分重要转换，并且由于有限的内存大小N，总是用最近的转换覆盖。同样，均匀抽样给回放记忆中的所有转换同等的重视。更复杂的抽样策略可能会强调我们可以从中学习最多的转换，类似于优先级扫描[17]。</p>
+<h2 id="41-预处理和模型架构"><a class="markdownIt-Anchor" href="#41-预处理和模型架构"></a> 4.1 预处理和模型架构</h2>
+<p>直接处理原始雅达利帧，这些帧是210×160像素的图像，具有128色调色板，计算上要求很高，所以我们应用了一个旨在减少输入维度的基本预处理步骤。原始帧通过首先将其RGB表示转换为灰度并下采样到110×84图像来进行预处理。最终的输入表示是通过裁剪图像的一个84×84区域获得的，该区域大致捕捉到游戏区域。最终裁剪阶段是必要的，因为我们使用来自[11]的GPU实现的2D卷积，它期望方形输入。对于本文的实验，算法1中的函数φ将此预处理应用于历史记录的最后4帧，并将它们堆叠起来以产生Q函数的输入。</p>
+<p>有几种可能的方式来使用神经网络参数化Q。由于Q将历史-动作对映射到它们的Q值的标量估计，一些先前的方法[20, 12]将历史和动作作为神经网络的输入。这种类型架构的主要缺点是，需要单独的前向传递来计算每个动作的Q值，导致成本与动作数量成线性增长。我们使用另一种架构，其中每个可能的动作都有一个单独的输出单元，只有状态表示是神经网络的输入。输出对应于输入状态的个体动作的预测Q值。这种类型架构的主要优势是能够通过单个网络前向传递计算给定状态的所有可能动作的Q值。</p>
+<p>我们现在描述用于所有七款雅达利游戏的确切架构。神经网络的输入是由φ产生的84×84×4图像。第一隐藏层卷积16个8×8滤波器，步幅为4，与输入图像一起，并应用整流非线性[10, 18]。第二隐藏层卷积32个4×4滤波器，步幅为2，再次应用整流非线性。最终隐藏层是完全连接的，由256个整流单元组成。输出层是完全连接的线性层，每个有效动作有一个单独的输出。在我们考虑的游戏中，有效动作的数量在4到18之间变化。我们将使用我们的方法训练的卷积网络称为深度Q网络（DQN）。</p>
+<h2 id="5-实验"><a class="markdownIt-Anchor" href="#5-实验"></a> 5 实验</h2>
+<p>到目前为止，我们已经在七款流行的雅达利游戏上进行了实验——Beam Rider、Breakout、Enduro、Pong、Q*bert、Seaquest、Space Invaders。我们在所有七款游戏上使用相同的网络架构、学习算法和超参数设置，表明我们的方法足够稳健，可以在多种游戏上工作，而不需要结合游戏特定的信息。虽然我们在真实且未修改的游戏上评估了我们的代理，但我们只在训练期间对游戏的奖励结构做了一个改变。由于分数的规模在不同游戏之间差异很大，我们将所有正奖励固定为1，所有负奖励固定为-1，将0奖励保持不变。以这种方式剪辑奖励限制了误差导数的规模，并使其更容易在多个游戏上使用相同的学率。同时，它可能会影响我们代理的性能，因为它不能区分不同大小的奖励。</p>
+<p>在这些实验中，我们使用了RMSProp算法和小批量大小为32。训练期间的行为策略是ε-贪婪策略，ε在最初的一百万帧内线性从1衰减到0.1，之后固定在0.1。我们总共训练了十百万帧，并使用了一百万个最近帧的回放记忆。</p>
+<p>遵循之前玩雅达利游戏的方法，我们还使用了一种简单的帧跳过技术[3]。更准确地说，代理每隔<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>k</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">k^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span>帧看到并选择动作，而不是每一帧，其在跳过的帧上重复最后一个动作。由于运行模拟器向前一步所需的计算远少于代理选择动作，这项技术允许代理在不显著增加运行时间的情况下大约多玩k倍的游戏。我们除了Space Invaders之外的所有游戏中都使用k=4，我们注意到在Space Invaders中使用k=4会使激光器不可见，因为它们闪烁的周期。我们使用k=3来使激光器可见，这是所有游戏中唯一改变的超参数值。</p>
+<h3 id="51-训练和稳定性"><a class="markdownIt-Anchor" href="#51-训练和稳定性"></a> 5.1 训练和稳定性</h3>
+<p>在监督学习中，可以通过在训练期间在训练集和验证集上评估模型来轻松跟踪模型的性能。然而，在强化学习中，准确评估代理在训练期间的进展可能具有挑战性。由于我们的评估指标，如[3]所建议的，是代理在一集或游戏中收集的总奖励的平均值，我们定期在训练期间计算它。平均总奖励指标往往非常嘈杂，因为策略权重的微小变化可能导致代理访问的状态分布的大变化。图2中最左边的两个图表显示了在Seaquest和Breakout游戏上训练期间平均总奖励的演变。这两个平均奖励图表确实相当嘈杂，给人一种学习算法没有稳定进展的印象。另一个更稳定的指标是策略的估计动作值函数Q，它提供了代理从其策略中跟随任何给定状态可以获得多少折扣奖励的估计。我们在训练开始前通过运行随机策略收集一组固定状态，并跟踪这些状态的最大预测Q的平均值。图2中最右边的两个图表显示，平均预测Q的增加比代理获得的总奖励的平均值要平滑得多，并且在五个其他游戏上绘制相同的指标会产生同样平滑的曲线。除了在训练期间看到相对平滑的预测Q改进外，我们的实验中没有遇到任何发散问题。这表明，尽管缺乏任何理论收敛保证，我们的方法能够使用强化学习信号和随机梯度下降稳定地训练大型神经网络。</p>
+<h3 id="52-可视化价值函数"><a class="markdownIt-Anchor" href="#52-可视化价值函数"></a> 5.2 可视化价值函数</h3>
+<p>图3显示了在游戏Seaquest上学习到的价值函数的可视化。图中显示，当敌人在屏幕左侧出现时（点A），预测的价值跳跃。然后，代理向敌人发射鱼雷，预测的价值在鱼雷即将击中敌人时达到峰值（点B）。最后，当敌人消失后，价值大致回到其原始值（点C）。图3展示了我们的方法能够学习如何为一个相当复杂的事件序列演化价值函数。</p>
+<h3 id="53-主要评估"><a class="markdownIt-Anchor" href="#53-主要评估"></a> 5.3 主要评估</h3>
+<p>我们将我们的结果与RL文献中表现最好的方法进行比较[3, 4]。标记为Sarsa的方法使用Sarsa算法在为雅达利任务手工设计的几个不同特征集上学习线性策略，我们报告了表现最好的特征集的得分[3]。Contingency使用与Sarsa相同的基本方法，但用代理控制的屏幕部分的学到的表示增强了特征集[4]。请注意，这两种方法都通过使用背景减法和将128种颜色视为单独的通道，将大量关于视觉问题的先验知识纳入其中。由于许多雅达利游戏使用每种类型的对象的一个独特颜色，将每种颜色视为单独的通道类似于产生一个单独的二进制地图，编码每种对象类型的存在。相比之下，我们的代理只接收原始RGB屏幕截图作为输入，并且必须自己学习检测对象。</p>
+<p>除了学习到的代理，我们还报告了一位专家人类游戏玩家和一个均匀随机选择动作的策略的得分。人类表现是在每款游戏上玩大约两小时后实现的中位数奖励。请注意，我们报告的人类得分比Bellemare等人[3]的要高得多。对于学习到的方法，我们遵循Bellemare等人[3, 5]使用的评估策略，并报告通过运行ε-贪婪策略并固定步数获得的平均得分，其中ε=0.05。表1的前五行显示了所有游戏上的每款游戏的平均得分。我们的方法（标记为DQN）在所有七款游戏上大幅优于其他学习方法，尽管几乎没有关于输入的先验知识。</p>
+<p>我们还包括与[8]中的进化策略搜索方法的比较在表1的最后三行。我们报告了该方法的两组结果。HNeat Best得分反映了使用手工设计的对象检测算法的结果，该算法输出雅达利屏幕上对象的位置和类型。HNeat Pixel得分是通过使用雅达利模拟器的特殊8色通道表示获得的，该表示在每个通道上代表一个对象标签图。这种方法严重依赖于找到一个代表成功利用的确定性状态序列。不太可能以这种方式学到的策略会推广到随机扰动；因此，算法仅在最高得分的单个剧集中进行评估。相比之下，我们的算法在ε-贪婪控制序列上进行评估，并且必须因此推广到各种可能的情况。尽管如此，我们展示了在所有游戏中，除了Space Invaders之外，不仅我们的最大评估结果（第8行），而且我们的平均结果（第4行）都实现了更好的性能。</p>
+<p>最后，我们展示了我们的方法在Breakout、Enduro和Pong上实现了比专家人类玩家更好的性能，并且在Beam Rider上接近人类表现。我们在Q*bert、Seaquest、Space Invaders上远远落后于人类表现，这些游戏更具挑战性，因为它们要求网络找到一个跨越长时间尺度的策略。</p>
+<h2 id="6-结论"><a class="markdownIt-Anchor" href="#6-结论"></a> 6 结论</h2>
+<p>本文介绍了一种新的深度学习模型用于强化学习，并展示了其使用仅原始像素作为输入掌握雅达利2600电脑游戏困难控制策略的能力。我们还提出了一种结合随机小批量更新与经验回放记忆的在线Q学习变体，以简化深度网络用于RL的训练。我们的方法在七个游戏中测试的六个游戏中给出了最先进的结果，无需调整架构或超参数。</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/04/01/%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/"
+                                   title="强化学习研究笔记"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">强化学习研究笔记</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BF%BB%E8%AF%91%E4%BD%BF%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%8E%A9%E9%9B%85%E8%BE%BE%E5%88%A9%E6%B8%B8%E6%88%8F"><span class="nav-text"> 翻译：使用深度强化学习玩雅达利游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-text"> 摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E8%A8%80"><span class="nav-text"> 1 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%83%8C%E6%99%AF"><span class="nav-text"> 2 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="nav-text"> 3 相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="nav-text"> 4 深度强化学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41-%E9%A2%84%E5%A4%84%E7%90%86%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="nav-text"> 4.1 预处理和模型架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%9E%E9%AA%8C"><span class="nav-text"> 5 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-%E8%AE%AD%E7%BB%83%E5%92%8C%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-text"> 5.1 训练和稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-text"> 5.2 可视化价值函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-%E4%B8%BB%E8%A6%81%E8%AF%84%E4%BC%B0"><span class="nav-text"> 5.3 主要评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%BB%93%E8%AE%BA"><span class="nav-text"> 6 结论</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">040822</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">总字数</span>
+                    <span class="item-value border-box word">158.4k</span>
+                </span>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BF%BB%E8%AF%91%E4%BD%BF%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%8E%A9%E9%9B%85%E8%BE%BE%E5%88%A9%E6%B8%B8%E6%88%8F"><span class="nav-text"> 翻译：使用深度强化学习玩雅达利游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-text"> 摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E8%A8%80"><span class="nav-text"> 1 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%83%8C%E6%99%AF"><span class="nav-text"> 2 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="nav-text"> 3 相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="nav-text"> 4 深度强化学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41-%E9%A2%84%E5%A4%84%E7%90%86%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="nav-text"> 4.1 预处理和模型架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%9E%E9%AA%8C"><span class="nav-text"> 5 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-%E8%AE%AD%E7%BB%83%E5%92%8C%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-text"> 5.1 训练和稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-text"> 5.2 可视化价值函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-%E4%B8%BB%E8%A6%81%E8%AF%84%E4%BC%B0"><span class="nav-text"> 5.3 主要评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%BB%93%E8%AE%BA"><span class="nav-text"> 6 结论</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local-search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+    
+        
+    
+
+</body>
+</html>
